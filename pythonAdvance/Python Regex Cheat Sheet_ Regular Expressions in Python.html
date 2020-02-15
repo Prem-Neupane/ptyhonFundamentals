@@ -1,0 +1,1048 @@
+<!DOCTYPE html>
+<!-- saved from url=(0047)https://www.dataquest.io/blog/regex-cheatsheet/ -->
+<html lang="en-US" class=""><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<!--[if lt IE 9]>
+	<script src="https://www.dataquest.io/wp-content/themes/ignition/js/html5/dist/html5shiv.js"></script>
+	<script src="//css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+	<![endif]-->
+	<!--[if IE 8]>
+	<link rel="stylesheet" type="text/css" href="https://www.dataquest.io/wp-content/themes/ignition/css/ie8.css"/>
+	<![endif]-->
+	<!--[if IE 7]>
+	<link rel="stylesheet" type="text/css" href="https://www.dataquest.io/wp-content/themes/ignition/css/ie7.css"/>
+	<![endif]-->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	
+			<script type="text/javascript" async="" src="./Python Regex Cheat Sheet_ Regular Expressions in Python_files/js"></script><script async="" src="./Python Regex Cheat Sheet_ Regular Expressions in Python_files/qevents.js.download"></script><script src="./Python Regex Cheat Sheet_ Regular Expressions in Python_files/pixel.js.download" async=""></script><script async="" src="./Python Regex Cheat Sheet_ Regular Expressions in Python_files/profitwell.js.download"></script><script type="text/javascript" async="" src="./Python Regex Cheat Sheet_ Regular Expressions in Python_files/analytics.js.download"></script><script type="text/javascript" async="" src="./Python Regex Cheat Sheet_ Regular Expressions in Python_files/fbevents.js.download"></script><script type="text/javascript" async="" src="./Python Regex Cheat Sheet_ Regular Expressions in Python_files/amplitude-5.2.2-min.gz.js.download"></script><script type="text/javascript" async="" src="./Python Regex Cheat Sheet_ Regular Expressions in Python_files/gtm.js.download"></script><script type="text/javascript" async="" src="./Python Regex Cheat Sheet_ Regular Expressions in Python_files/insight.min.js.download"></script><script type="text/javascript" async="" src="./Python Regex Cheat Sheet_ Regular Expressions in Python_files/mf5oz4we"></script><script type="text/javascript" async="" src="./Python Regex Cheat Sheet_ Regular Expressions in Python_files/fbds.js.download"></script><script type="text/javascript" async="" src="./Python Regex Cheat Sheet_ Regular Expressions in Python_files/analytics.min.js.download"></script><script>
+  !function(){var analytics=window.analytics=window.analytics||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","debug","page","once","off","on"];analytics.factory=function(t){return function(){var e=Array.prototype.slice.call(arguments);e.unshift(t);analytics.push(e);return analytics}};for(var t=0;t<analytics.methods.length;t++){var e=analytics.methods[t];analytics[e]=analytics.factory(e)}analytics.load=function(t,e){var n=document.createElement("script");n.type="text/javascript";n.async=!0;n.src="https://cdn.segment.com/analytics.js/v1/"+t+"/analytics.min.js";var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(n,a);analytics._loadOptions=e};analytics.SNIPPET_VERSION="4.1.0";
+  analytics.load("BJhKYEXejzjqXq7xQDFI6N0M5W7HBAH5");
+  analytics.page();
+  }}();
+</script>
+<link rel="stylesheet" href="./Python Regex Cheat Sheet_ Regular Expressions in Python_files/nmj4kuc.css">
+
+
+			<title>Python Regex Cheat Sheet: Regular Expressions in Python</title>
+
+<!-- This site is optimized with the Yoast SEO Premium plugin v13.0 - https://yoast.com/wordpress/plugins/seo/ -->
+<meta name="description" content="Keep this regex cheat sheet for Python nearby anytime you need to use regular expressions for your data science work, as a quick, handy reference.">
+<meta name="robots" content="max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+<link rel="canonical" href="https://www.dataquest.io/blog/regex-cheatsheet/">
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python Regex Cheat Sheet: Regular Expressions in Python">
+<meta property="og:description" content="Keep this regex cheat sheet for Python nearby anytime you need to use regular expressions for your data science work, as a quick, handy reference.">
+<meta property="og:url" content="https://www.dataquest.io/blog/regex-cheatsheet/">
+<meta property="og:site_name" content="Dataquest">
+<meta property="article:publisher" content="https://www.facebook.com/dataquestio">
+<meta property="article:tag" content="Learn Python">
+<meta property="article:tag" content="Resources">
+<meta property="article:section" content="Cheat Sheets">
+<meta property="article:published_time" content="2018-04-02T19:00:00+00:00">
+<meta property="article:modified_time" content="2019-08-29T19:41:41+00:00">
+<meta property="og:updated_time" content="2019-08-29T19:41:41+00:00">
+<meta property="og:image" content="https://www.dataquest.io/wp-content/uploads/2018/04/regex-cheat-sheet-data-science-pdf.jpg">
+<meta property="og:image:secure_url" content="https://www.dataquest.io/wp-content/uploads/2018/04/regex-cheat-sheet-data-science-pdf.jpg">
+<meta property="og:image:width" content="1040">
+<meta property="og:image:height" content="520">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:description" content="Keep this regex cheat sheet for Python nearby anytime you need to use regular expressions for your data science work, as a quick, handy reference.">
+<meta name="twitter:title" content="Python Regex Cheat Sheet: Regular Expressions in Python">
+<meta name="twitter:site" content="@dataquestio">
+<meta name="twitter:image" content="https://www.dataquest.io/wp-content/uploads/2018/04/regex-cheat-sheet-data-science-pdf.jpg">
+<meta name="twitter:creator" content="@dataquestio">
+<script type="application/ld+json" class="yoast-schema-graph yoast-schema-graph--main">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://www.dataquest.io/#organization","name":"Dataquest","url":"https://www.dataquest.io/","sameAs":["https://www.facebook.com/dataquestio","https://www.linkedin.com/company/dataquest-io","https://twitter.com/dataquestio"],"logo":{"@type":"ImageObject","@id":"https://www.dataquest.io/#logo","url":"https://www.dataquest.io/wp-content/uploads/2019/01/Logo-On-Light-BLUE.png","width":2001,"height":427,"caption":"Dataquest"},"image":{"@id":"https://www.dataquest.io/#logo"}},{"@type":"WebSite","@id":"https://www.dataquest.io/#website","url":"https://www.dataquest.io/","name":"Dataquest","description":"Aquire the skills you need to start and advance your data science career.","publisher":{"@id":"https://www.dataquest.io/#organization"},"potentialAction":{"@type":"SearchAction","target":"https://www.dataquest.io/?s={search_term_string}","query-input":"required name=search_term_string"}},{"@type":"ImageObject","@id":"https://www.dataquest.io/blog/regex-cheatsheet/#primaryimage","url":"https://www.dataquest.io/wp-content/uploads/2018/04/regex-cheat-sheet-data-science-pdf.jpg","width":1040,"height":520,"caption":"regex-cheat-sheet-data-science-pdf"},{"@type":"WebPage","@id":"https://www.dataquest.io/blog/regex-cheatsheet/#webpage","url":"https://www.dataquest.io/blog/regex-cheatsheet/","inLanguage":"en-US","name":"Python Regex Cheat Sheet: Regular Expressions in Python","isPartOf":{"@id":"https://www.dataquest.io/#website"},"primaryImageOfPage":{"@id":"https://www.dataquest.io/blog/regex-cheatsheet/#primaryimage"},"datePublished":"2018-04-02T19:00:00+00:00","dateModified":"2019-08-29T19:41:41+00:00","description":"Keep this regex cheat sheet for Python nearby anytime you need to use regular expressions for your data science work, as a quick, handy reference."},{"@type":"Article","@id":"https://www.dataquest.io/blog/regex-cheatsheet/#article","isPartOf":{"@id":"https://www.dataquest.io/blog/regex-cheatsheet/#webpage"},"author":{"@id":"https://www.dataquest.io/#/schema/person/77e21b76d34f8638ff9787377e9f58ce"},"headline":"Regex Cheat Sheet: A Quick Guide to Regular Expressions in Python","datePublished":"2018-04-02T19:00:00+00:00","dateModified":"2019-08-29T19:41:41+00:00","commentCount":0,"mainEntityOfPage":{"@id":"https://www.dataquest.io/blog/regex-cheatsheet/#webpage"},"publisher":{"@id":"https://www.dataquest.io/#organization"},"image":{"@id":"https://www.dataquest.io/blog/regex-cheatsheet/#primaryimage"},"keywords":"Learn Python,Resources","articleSection":"Cheat Sheets,Resources"},{"@type":["Person"],"@id":"https://www.dataquest.io/#/schema/person/77e21b76d34f8638ff9787377e9f58ce","name":"Alex Yang","image":{"@type":"ImageObject","@id":"https://www.dataquest.io/#authorlogo","url":"https://www.dataquest.io/wp-content/uploads/2019/01/alex_yang_profile-1.jpeg","caption":"Alex Yang"},"description":"Alex is a writer fascinated by the things code can do. He also enjoys citizen science and new media art.","sameAs":[]}]}</script>
+<!-- / Yoast SEO Premium plugin. -->
+
+<link rel="dns-prefetch" href="https://s.w.org/">
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/12.0.0-1\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/12.0.0-1\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/www.dataquest.io\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.3.2"}};
+			!function(e,a,t){var r,n,o,i,p=a.createElement("canvas"),s=p.getContext&&p.getContext("2d");function c(e,t){var a=String.fromCharCode;s.clearRect(0,0,p.width,p.height),s.fillText(a.apply(this,e),0,0);var r=p.toDataURL();return s.clearRect(0,0,p.width,p.height),s.fillText(a.apply(this,t),0,0),r===p.toDataURL()}function l(e){if(!s||!s.fillText)return!1;switch(s.textBaseline="top",s.font="600 32px Arial",e){case"flag":return!c([127987,65039,8205,9895,65039],[127987,65039,8203,9895,65039])&&(!c([55356,56826,55356,56819],[55356,56826,8203,55356,56819])&&!c([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]));case"emoji":return!c([55357,56424,55356,57342,8205,55358,56605,8205,55357,56424,55356,57340],[55357,56424,55356,57342,8203,55358,56605,8203,55357,56424,55356,57340])}return!1}function d(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}for(i=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},o=0;o<i.length;o++)t.supports[i[o]]=l(i[o]),t.supports.everything=t.supports.everything&&t.supports[i[o]],"flag"!==i[o]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[i[o]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(n=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",n,!1),e.addEventListener("load",n,!1)):(e.attachEvent("onload",n),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(r=t.source||{}).concatemoji?d(r.concatemoji):r.wpemoji&&r.twemoji&&(d(r.twemoji),d(r.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script><script src="./Python Regex Cheat Sheet_ Regular Expressions in Python_files/wp-emoji-release.min.js.download" type="text/javascript" defer=""></script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	<link rel="stylesheet" id="wp-block-library-css" href="./Python Regex Cheat Sheet_ Regular Expressions in Python_files/style.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="searchandfilter-css" href="./Python Regex Cheat Sheet_ Regular Expressions in Python_files/style.css" type="text/css" media="all">
+<link rel="stylesheet" id="tve_style_family_tve_flt-css" href="./Python Regex Cheat Sheet_ Regular Expressions in Python_files/thrive_flat.css" type="text/css" media="all">
+<link rel="stylesheet" id="l2h_style-css" href="./Python Regex Cheat Sheet_ Regular Expressions in Python_files/latex.min.css" type="text/css" media="screen, print">
+<link rel="stylesheet" id="l2h_print_style-css" href="./Python Regex Cheat Sheet_ Regular Expressions in Python_files/print.min.css" type="text/css" media="print">
+<link rel="stylesheet" id="jquery-data-tables-css" href="./Python Regex Cheat Sheet_ Regular Expressions in Python_files/datatables.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="posts-data-table-css" href="./Python Regex Cheat Sheet_ Regular Expressions in Python_files/posts-data-table.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="ignition-style-css" href="./Python Regex Cheat Sheet_ Regular Expressions in Python_files/style(1).css" type="text/css" media="all">
+<link rel="stylesheet" id="thrive-reset-css" href="./Python Regex Cheat Sheet_ Regular Expressions in Python_files/reset.css" type="text/css" media="all">
+<link rel="stylesheet" id="thrive-main-style-css" href="./Python Regex Cheat Sheet_ Regular Expressions in Python_files/main_navy.css" type="text/css" media="all">
+<link rel="stylesheet" id="chld_thm_cfg_separate-css" href="./Python Regex Cheat Sheet_ Regular Expressions in Python_files/ctc-style.css" type="text/css" media="all">
+<link rel="stylesheet" id="thrive-apprentice-style-css" href="./Python Regex Cheat Sheet_ Regular Expressions in Python_files/apprentice_green.css" type="text/css" media="all">
+<link rel="stylesheet" id="prism-theme-css" href="./Python Regex Cheat Sheet_ Regular Expressions in Python_files/prism-css.min.css" type="text/css" media="all">
+<script type="text/javascript">
+/* <![CDATA[ */
+var THO_Head = {"variations":[],"post_id":"2014","element_tag":"thrive_headline","woo_tag":"tho_woo"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./Python Regex Cheat Sheet_ Regular Expressions in Python_files/header.min.js.download"></script>
+<script type="text/javascript" src="./Python Regex Cheat Sheet_ Regular Expressions in Python_files/jquery.js.download"></script>
+<script type="text/javascript" src="./Python Regex Cheat Sheet_ Regular Expressions in Python_files/jquery-migrate.min.js.download"></script>
+<link rel="https://api.w.org/" href="https://www.dataquest.io/wp-json/">
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://www.dataquest.io/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://www.dataquest.io/wp-includes/wlwmanifest.xml"> 
+<meta name="generator" content="WordPress 5.3.2">
+<link rel="shortlink" href="https://www.dataquest.io/?p=2014">
+<link rel="alternate" type="application/json+oembed" href="https://www.dataquest.io/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.dataquest.io%2Fblog%2Fregex-cheatsheet%2F">
+<link rel="alternate" type="text/xml+oembed" href="https://www.dataquest.io/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.dataquest.io%2Fblog%2Fregex-cheatsheet%2F&amp;format=xml">
+<style type="text/css" id="tve_global_variables">:root{--tcb-color-0:rgb(35, 42, 61);--tcb-color-1:rgb(132, 132, 157);--tcb-color-2:rgb(77, 127, 223);--tcb-color-3:rgb(97, 209, 153);--tcb-color-4:rgb(0, 0, 0);--tcb-color-5:rgb(0, 0, 0);--tcb-color-6:rgb(0, 0, 0);--tcb-color-7:rgb(212, 212, 212);--tcb-color-8:rgb(137, 138, 142);--tcb-color-9:rgb(242, 243, 247);--tcb-color-10:rgba(35, 42, 61, 0.77);--tcb-color-11:rgb(57, 207, 144);--tcb-color-12:rgb(255, 255, 255);--tcb-color-13:rgb(35, 42, 61);--tcb-color-14:rgb(41, 161, 248);--tcb-color-15:rgb(57, 207, 144);--tcb-gradient-0:linear-gradient(90deg, rgb(97, 209, 153) 0%, rgb(78, 126, 222) 98%);}</style>	<script>
+		/************* Helper functions ******************/
+		function isInArray(value, array) {
+		  return array.indexOf(value) > -1;
+		}
+		function getHostFromUrl(url) {
+			var a=document.createElement('a');
+			a.href=url;
+			return a.hostname;
+		}
+		function getUrlVar(key){
+			var result = new RegExp(key + "=([^&]*)", "i").exec(window.location.search); 
+			return result && unescape(result[1]) || ""; 
+		}
+		/************* End of Helper Functions ******************/
+		
+		
+		/******************** Cookie helper functions ************************/
+		function checkCookieExists(cookie_name) {
+			return document.cookie.indexOf(cookie_name + '=') !== -1;
+		}
+		function setCookie(name,value,domain,days) {
+			var expires = "";
+			if (days) {
+				var date = new Date();
+				date.setTime(date.getTime() + (days*24*60*60*1000));
+				expires = "; expires=" + date.toUTCString();
+			}
+			document.cookie = name + "=" + (value || "")  + expires +  ";domain=" + domain + "; path=/";
+		}
+		/******************** End Of Cookie helper functions ******************/
+		
+		function setRefererUrlCookie() {
+			var cookie_domain = '.dataquest.io'
+			var internal_hosts =  ['www.dataquest.io', 'dataquest.io', ]
+
+			/* Set Landing page cookie if it doesnot exist */
+			if (!checkCookieExists('dataquest-cac-landing-page')) {
+				setCookie('dataquest-cac-landing-page', window.location.pathname, cookie_domain, 7)
+			}
+			
+			var referrer = document.referrer
+			if (!referrer) {
+				return
+			}
+			host = getHostFromUrl(referrer)
+			
+			/* If referrer is not coming from dataquest, set it in cookie and override landing_page cookie */
+			if (!isInArray(host, internal_hosts)) {
+				setCookie('dataquest-cac-referer-url', referrer, cookie_domain, 365)
+				setCookie('dataquest-cac-landing-page', window.location.pathname, cookie_domain, 365)
+			}
+		}
+
+		function setUTMCodesCookies() {
+			var utm_codes = ['utm_source','utm_campaign','utm_content','utm_term','utm_medium']
+			var cookie_prefix = 'dataquest-cac-'
+			var cookie_domain = '.dataquest.io'
+			
+			for (code in utm_codes) {
+				var utm_code = utm_codes[code]
+				var code_value = getUrlVar(utm_code)
+				var cookie_name = cookie_prefix + utm_code.replace('_', '-')
+				
+				if (code_value) {
+					setCookie(cookie_name, code_value, cookie_domain, 365)
+				}
+			}
+		}
+									
+		
+		function setLandingPageLastTouchCookie() {
+			var cookie_domain = '.dataquest.io'
+			setCookie('dataquest-cac-landing-page-last-touch', window.location.pathname, cookie_domain, 365)
+
+		}
+		
+		setUTMCodesCookies()
+		setRefererUrlCookie()
+		setLandingPageLastTouchCookie()
+
+	</script>
+<style>
+.latex_thm, .latex_lem, .latex_cor, .latex_defn, .latex_prop, .latex_rem{
+  margin:0;padding:5px;
+  background: lightcyan;
+  border: solid 3px green;
+  -moz-border-radius: 1.0em;
+  -webkit-border-radius: 7px;
+  box-shadow: 0 0 0 green;
+}
+.latex_em{
+  font-style: italic;
+}
+.bibtex_title{
+  font-weight:bold;
+  color: #004b33;
+}
+a.bibtex_title{
+  text-decoration: none;
+}
+.latex_proof::after{
+  content: "\220E";
+  color: gray;
+  text-align: right;
+  display: block;
+  font-size: 1.2em;
+}
+</style>
+        <style type="text/css">
+            .hidden {display:none;}
+        </style>
+        <script type="text/javascript">
+         jQuery('html').addClass('hidden');
+	            
+	 jQuery(document).ready(function($) {		            
+	    $('html').removeClass('hidden');	            
+	 });  
+        </script>
+    		<style type="text/css">body { background:#ffffff; }.cnt article h1.entry-title a { color:#232a3d; }.cnt article h2.entry-title a { color:#232a3d; }.bSe h1 { color:#232a3d; }.bSe h2 { color:#232a3d; }.bSe h3 { color:#232a3d; }.bSe h4 { color:#232a3d; }.bSe h5 { color:#232a3d; }.bSe h6 { color:#232a3d; }.cnt article p { color:#232a3d; }.cnt .bSe article { color:#232a3d; }.cnt article h1 a, .tve-woocommerce .bSe .awr .entry-title, .tve-woocommerce .bSe .awr .page-title{font-family:Open Sans,sans-serif;}.bSe h1{font-family:Open Sans,sans-serif;}.bSe h2,.tve-woocommerce .bSe h2{font-family:Open Sans,sans-serif;}.bSe h3,.tve-woocommerce .bSe h3{font-family:Open Sans,sans-serif;}.bSe h4{font-family:Open Sans,sans-serif;}.bSe h5{font-family:Open Sans,sans-serif;}.bSe h6{font-family:Open Sans,sans-serif;}.cnt, .bp-t, .tve-woocommerce .product p, .tve-woocommerce .products p{font-family:Open Sans,sans-serif;font-weight:400;}article strong {font-weight: bold;}.bSe h1, .bSe .entry-title { font-size:36px; }.cnt { font-size:14px; }.out { font-size:14px; }.thrivecb { font-size:14px; }.aut p { font-size:14px; }.cnt p { line-height:2em; }.lhgh { line-height:2em; }.dhgh { line-height:2em; }.dhgh { font-size:14px; }.lhgh { font-size:14px; }.thrivecb { line-height:2em; }.cnt .cmt, .cnt .acm { background-color:#59b5f7; }.trg { border-color:#59b5f7 transparent transparent; }.str { border-color: transparent #59b5f7 transparent transparent; }.brd ul li { color:#59b5f7; }.bSe a { color:#29a1f8; }.bSe .faq h4{font-family:Open Sans,sans-serif;font-weight:400;}article strong {font-weight: bold;}header ul.menu > li > a { color:#ffffff; }header .phone .apnr, header .phone .apnr:before, header .phone .fphr { color:#ffffff; }header ul.menu > li > a:hover { color:#ffffff; }header .phone:hover .apnr, header .phone:hover .apnr:before, header .phone:hover .fphr { color:#ffffff; }header nav > ul > li.current_page_item > a:hover { color:#ffffff; }header nav > ul > li.current_menu_item > a:hover { color:#ffffff; }header nav > ul > li.current_menu_item > a:hover { color:#ffffff; }header nav > ul > li > a:active { color:#ffffff; }header #logo > a > img { max-width:180px; }header ul.menu > li.h-cta > a { color:#FFFFFF!important; }header ul.menu > li.h-cta >a  { background:#ffffff; }header ul.menu > li.h-cta > a { border-color:#ffffff; }header ul.menu > li.h-cta > a:hover { color:#FFFFFF!important; }header ul.menu > li.h-cta > a:hover { background:#ffffff; }.product.woocommerce.add_to_cart_inline a.button.product_type_simple.ajax_add_to_cart { background-color:#FFFFFF; }.product.woocommerce.add_to_cart_inline a.button.product_type_simple.ajax_add_to_cart { border-color:#29a1f8; }.product.woocommerce.add_to_cart_inline a.button.product_type_simple.ajax_add_to_cart { color:#29a1f8; }.product.woocommerce.add_to_cart_inline a.button.product_type_simple.ajax_add_to_cart:hover { background-color:#29a1f8; }.woocommerce p.return-to-shop a.button.wc-backward { border-color:#29a1f8; }.woocommerce p.return-to-shop a.button.wc-backward { color:#29a1f8; }.woocommerce p.return-to-shop a.button.wc-backward:hover { background:#29a1f8; }.woocommerce p.return-to-shop a.button.wc-backward:hover { color:#FFFFFF; }</style>
+		<style type="text/css" id="custom-background-css">
+body.custom-background { background-color: #ffffff; }
+</style>
+	<style type="text/css" id="thrive-default-styles"></style><link rel="icon" href="https://www.dataquest.io/wp-content/uploads/2019/01/cropped-rocket-icon-50x50.jpg" sizes="32x32">
+<link rel="icon" href="https://www.dataquest.io/wp-content/uploads/2019/01/cropped-rocket-icon-300x300.jpg" sizes="192x192">
+<link rel="apple-touch-icon-precomposed" href="https://www.dataquest.io/wp-content/uploads/2019/01/cropped-rocket-icon-300x300.jpg">
+<meta name="msapplication-TileImage" content="https://www.dataquest.io/wp-content/uploads/2019/01/cropped-rocket-icon-300x300.jpg">
+<style type="text/css" class="tve_global_style"></style>			<style type="text/css" class="tve_custom_style">@import url("//fonts.googleapis.com/css?family=Lato:400,700,300,&subset=latin");@import url("//fonts.googleapis.com/css?family=Roboto:300,500,400&subset=latin");@media (min-width: 300px){:not(#tve) [data-css="tve-u-155c872270b1db7"]:hover button { background-color: rgb(7, 133, 115) !important; }:not(#tve) [data-css="tve-u-125c872270b1db4"]:hover input { color: rgb(0, 109, 94); background-color: rgb(159, 202, 196) !important; }:not(#tve) [data-css="tve-u-135c872270b1db5"] > :first-child { color: rgb(216, 216, 216); }[data-css="tve-u-75c872270b1daf"] { margin-bottom: 20px !important; }[data-css="tve-u-25c872270b1daa"] { padding-top: 0px !important; padding-bottom: 0px !important; }[data-css="tve-u-15c872270b1da9"] { margin-top: 10px !important; margin-bottom: 20px !important; }[data-css="tve-u-105c872270b1db2"] { margin-top: 0px !important; margin-bottom: 0px !important; }[data-css="tve-u-05c872270b1da6"] { overflow: hidden; background-color: rgb(101, 102, 147) !important; border-radius: 10px !important; padding: 20px !important; }:not(#tve) [data-css="tve-u-155c872270b1db7"] button { font-size: 22px; line-height: 30px; font-family: Roboto; border-radius: 5px; overflow: hidden; border: none; background-color: rgb(0, 109, 94) !important; font-weight: bold !important; }:not(#tve) [data-css="tve-u-125c872270b1db4"] input { line-height: 28px; color: rgb(51, 51, 51); font-family: Roboto; font-weight: 300; border: none; border-radius: 5px; overflow: hidden; background-image: none !important; padding: 14px 18px !important; }[data-css="tve-u-95c872270b1db1"] { line-height: 27px !important; }:not(#tve) [data-css="tve-u-95c872270b1db1"] { font-family: Roboto; font-weight: 300; font-size: 18px !important; color: rgb(255, 255, 255) !important; }[data-css="tve-u-85c872270b1db0"] strong { font-weight: 500; }[data-css="tve-u-85c872270b1db0"] { line-height: 40px !important; }:not(#tve) [data-css="tve-u-85c872270b1db0"] { font-family: Roboto; font-weight: 300; color: rgb(255, 255, 255) !important; font-size: 28px !important; }[data-css="tve-u-145c872270b1db6"] { max-width: 30%; }[data-css="tve-u-115c872270b1db3"] { max-width: 70%; }[data-css="tve-u-55c872270b1dad"] { max-width: 75%; }[data-css="tve-u-35c872270b1dab"] { max-width: 25%; }[data-css="tve-u-45c872270b1dac"] { float: none; margin-left: auto; margin-right: auto; width: 155px; margin-top: 0px !important; margin-bottom: 0px !important; }[data-css="tve-u-16aa3247733"] p { margin: 0px !important; padding: 0px !important; }[data-css="tve-u-16aa3247733"] h1 { margin: 0px !important; padding: 0px !important; }:not(#tve) [data-css="tve-u-16aa3247735"]:hover .tcb-button-link { background-image: none !important; background-color: rgb(88, 177, 127) !important; }[data-css="tve-u-16aa3247735"] strong { font-weight: 700; }[data-css="tve-u-16aa3247735"] { display: block; max-width: 250px; margin-bottom: -42px !important; }:not(#tve) [data-css="tve-u-16aa3247735"] .tcb-button-link { font-size: 30px; font-family: Lato; font-weight: 400; }[data-css="tve-u-16aa3247735"] .tcb-button-link { border: 2px solid rgb(77, 127, 223); background-image: none !important; background-color: rgb(97, 209, 153) !important; padding: 20px !important; }:not(#tve) [data-css="tve-u-16aa3247736"] { font-size: 18px !important; color: rgb(35, 44, 61) !important; font-family: inherit !important; }[data-css="tve-u-16aa3247738"] { background-image: none !important; margin-top: 0px !important; margin-bottom: 60px !important; }[data-css="tve-u-16aa3247733"] { min-height: 97px; }[data-css="tve-u-16aa3247739"] { background-image: none !important; background-color: rgb(255, 255, 255) !important; border: 2px solid rgb(77, 127, 223)  !important; }[data-css="tve-u-16aa324773a"] { padding: 43px 43px 10px !important; margin-top: 40px !important; margin-bottom: 80px !important; }[data-css="tve-u-16aa324773b"] { background-image: none !important; margin-top: -48px !important; padding-bottom: 0px !important; margin-bottom: 30px !important; }:not(#tve) [data-css="tve-u-16aa324773c"] { font-size: 42px !important; color: rgb(97, 209, 153)  !important; }}@media (max-width: 767px){[data-css="tve-u-05c872270b1da6"] { padding: 14px !important; }[data-css="tve-u-65c872270b1dae"] { text-align: center; }[data-css="tve-u-85c872270b1db0"] { line-height: 1.2em !important; }:not(#tve) [data-css="tve-u-85c872270b1db0"] { font-size: 28px !important; }[data-css="tve-u-45c872270b1dac"] { width: 90px; margin-bottom: 10px !important; }[data-css="tve-u-16aa324773b"] { background-image: none !important; }}</style>		<style type="text/css" id="wp-custom-css">
+			body  {font-family: "Open Sans", sans-serif; color: #232a3d;}
+
+button, input, select, textarea, h4, h5, h6, .widget-area.sidebar, nav, p, .thrv-styled-list-item, .bSe h4, ol li, ul li  {font-family: "Open Sans", sans-serif; font-weight: 300; color: #232a3d; }
+
+.single-post article, .single-post article ul li, .single-post article p, .single-post article blockquote, .single-post article ol li {line-height: 1.8em; font-size: 15px;}
+
+.page-template-fullwidth-page p, .page-template-default p, .page-template-default ul li, .page-template-default ol li {font-family: "Open Sans", sans-serif; line-height: 1.7em; margin: 0px 0px; font-size: 16px; color: #232a3d!important; font-weight: 300;}
+
+.tcb-button-text {font-family: industry, sans-serif!important; font-weight: 700; letter-spacing: 1px;}
+
+h1, h2, h3 {font-family: "Industry", sans-serif!important; color: #232a3d!important; font-weight: bold!important;}
+
+.bSe h1 {font-size: 36px!important;}
+
+.scn>ul a:hover, section[id*='nav_menu-'] .scn ul a:hover, .scn ul[id*='menu'] a:hover {margin: 0px;}
+
+.path-box h3 {font-size: 17px!important; font-weight: 900; margin: 0px 0px 5px 0px; line-height: 1em}
+
+.path-box p {line-height: 1.6em; font-size: 14px;}
+
+.path-box a {text-decoration: none!important;}
+
+.path-box-button-text {text-transform: uppercase!important; letter-spacing: 1px;}
+
+
+.post-template-default h1, .post-template-default h2, .post-template-default h3 {padding: 40px 0px 20px}
+
+.post-template-default h4, .post-template-default h5, .post-template-default h6 {padding: 10px 0px 20px}
+
+
+#floating_menu header {padding: 2px!important; height: 58px!important;
+}
+
+header {border-bottom: 0px!important;}
+
+
+.menu, .page_item a, .menu-item a {font-size: 11px; text-transform: UPPERCASE; text-decoration: none; font-weight: 100; line-height: 1em;}
+
+header #logo > a > img {padding: 10px 0px 10px 0px;}
+
+header nav>ul>li.menu-item-has-children:hover>a:after, 
+header nav>ul>li.menu-item-has-children>a:after {color: #ffffff!important; font-weight: 100; }
+
+header nav>ul.menu li.current-menu-item>a, header nav>ul.menu li.current_page_item>a, header nav ul#menu li.current-menu-item>a, header nav ul#menu li.current_page_item>a {color: #ffffff;}
+
+header nav li.col-no-4>ul.sub-menu, header nav li.col-no-4 ul.sub-menu.position_menu {margin-top: 20px;}
+
+header nav>ul>li.menu-item-has-children>a:after {display: none;}
+
+header nav li.has-extended>ul.sub-menu {background: #ffffff;}
+
+header nav li.has-extended>ul.sub-menu li.menu-item {background: transparent; }
+
+header nav li.has-extended>ul.sub-menu li.menu-item a[href] {color: #232a3d;}
+
+header nav li.has-extended>ul.sub-menu li.menu-item a[href]:hover {color: #4d7fdf; background-color: rgb(242, 243, 247);}
+
+#menu-item-11096 a.colch {padding: 18px 8px 8px 8px; font-size: 14px; font-weight: 900;}
+
+#menu-item-11069 a.colch, #menu-item-11053 a.colch, #menu-item-11054 a.colch {color: #ffffff;}
+ 
+
+li.has-extended>ul.sub-menu>li ul.sub-menu li {margin: 0px 0px 0px 0px;}
+
+header nav li.has-extended>ul.sub-menu>li ul.sub-menu li a {line-height: 1.6em; padding: 10px 0px 10px 10px; font-size: 12px;}
+
+@media only screen and (max-width: 769px) {
+	header .hmn .rmn {background-image: none; border: 0px; }
+}
+
+@media only screen and (min-width: 769px) {
+	#menu-item-20221 a {background-color: #39CF90; border-radius: 5px;  padding: 6px 8px 5px; margin-top: -6px;}}
+
+@media only screen and (max-width: 768px) {
+	header nav li.has-extended ul.sub-menu li a {display: none;} 
+
+li#menu-item-11094	ul.sub-menu {display: none!important;}
+}
+
+
+.csbwfs-social-widget {
+    z-index: 100!important;
+}
+
+.page-template-default .csbwfs-social-widget, .blog .csbwfs-social-widget {display: none;}
+
+:not(pre) > code[class*="language-"], pre[class*="language-"] {background-color: #000000; border-radius: 3px;}
+
+p code {
+background-color: #e5eff5;
+padding: 1px 3px;
+border-radius: 3px;
+font-size: .95em;
+color: #000000;}
+
+pre {background: #000000; margin-top: -10px;}
+pre code {font-size: 13px; padding: 0px; color: #ffffff; background: #000000;}
+
+code[class*="language-"], pre[class*="language-"] {font-size: 15px; margin-bottom: 20px; margin-top: -10px;}
+
+
+
+.single-post table {width: 85%; margin: 30px auto; }
+
+.single-post table th {background-color: #f4f8fb; /*text-transform: lowercase;*/ color: #232a3d!important;}
+
+.single-post table td, article table th {font-size: 15px; border: 1px solid #e3ecf3; font-family: ingra, sans-serif; }
+
+.single-post .bSe h1.entry-title {font-size: 38px!important; color: #232a3d!important;}
+.single-post h2 {font-size: 32px; color: #232a3d!important;}
+.single-post h3 {font-size: 29px; color: #232a3d!important;}
+.single-post h4 {font-size: 26px; color: #232a3d!important;}
+.single-post h5 {font-size: 23px; color: #232a3d!important;}
+
+.page-header .page-title {text-transform: none; color: #ffffff; font-weight: normal; letter-spacing: 0em; font-size: 18px; line-height: 24px;}
+
+
+.widgets-list-layout-links  {line-height: 1.3; font-size: 14px}
+
+
+.sidebar .widget .widget-title {font-family: ingra, sans-serif; letter-spacing: 1.5px; padding-bottom: 15px; border-top: 1px solid #e9e9e9!important; padding-top: 25px;}
+
+.site-branding .site-title, .site-branding .site-text-logo {font-size: 20px; color: #ffffff; font-weight: normal; text-transform: none;}
+
+#content img {display: block; margin: 0px auto;}
+
+div table{
+    overflow-x:auto;
+}
+
+.scn ul li a {color: #232a3d;}
+.scn ul li a:hover {color: #4d7fdf;}
+
+
+.err {text-align: center;}
+.err h1 {display: none;}
+.err h4 {display: none;}
+form.lost {
+	display: inline-block; width: 80%;}
+
+.err .csc {text-align: left;}
+
+
+.sAs .srh input.search-field, .sAs .srh .search_field {
+	width: 285px;}
+
+ .srh input.search-field,  .srh .search_field {background-color: #ffffff; box-shadow: none; border-top: 2px solid #31394a; border-left: 2px solid #31394a; border-bottom: 2px solid #31394a; border-right: 0px;}
+
+input.search-field {font-size: 13px; line-height: 15px; padding: 10px;}
+
+input.search-field::-webkit-input-placeholder { 
+  color: transparent;
+}
+input.search-field::-moz-placeholder {
+  color: transparent;
+}
+input.search-field:-ms-input-placeholder { /* IE 10+ */
+  color: transparent;
+}
+	
+input.search-field:-moz-placeholder {
+  color: transparent;
+}
+
+form.srh {margin-left: 0px; padding-top: 5px; }
+
+input.search-field, .search_field {font-size: 1em; font-weight: 100; }
+
+input.search-field, .search-button, .submit_btn {
+    height: 40px; margin: 0px; padding: 0px 0px 0px 5px;
+	}
+
+.search-button, .submit_btn {background-color: #31394a!important; background-image:none; border: none; height: 47px!important;}
+
+.sAs .search-button, .sAs .submit_btn { 
+    width: 50px; z-index: 1000; position: relative;  top: -47px; left: 292px; }
+
+@media only screen and (max-width: 1080px) {
+.sAs .search-button, .sAs .submit_btn { 
+	width: 50px; z-index: 1000; position: relative;  top: -0px; left: 0px; }
+	form.srh {margin-bottom: 20px;}
+	
+	.sAs .srh input.search-field, .sAs .srh .search_field {
+    height: 43px;
+}
+}
+
+
+svg.tcb-icon {
+	color: #39CF90; 
+}
+
+.gmt-edd-slack-row {
+	text-align: center;
+}
+
+input#gmt_edd_slack_email {
+  width: 280px;
+	text-align: left;
+	padding: 10px 30px 10px 15px; 
+}
+
+button.gmt-edd-slack-form-button {
+font-size: 16px; line-height: 15px; padding: 14px 30px; background-color: #39CF90; color: #ffffff;  margin: 5px 10px; border: 0px; border-radius: 3px; text-transform: uppercase; width: 250px;
+}
+
+.thrv_wrapper.thrv-pricing-table .tcb-pricing-table-box-container .tcb-pt-featured-box .tve-content-box-background {
+    border-top-color: #39CF90;
+}
+
+
+.tvo-set12-template.tve_teal .tvo-testimonial-quote {color: #4d7fdf!important;}
+
+.tvo-set12-template.tve_teal .tvo-testimonial-name {color: #4d7fdf!important;}
+
+
+.directory-coursebox p {margin-top: 0px; font-size: 14px; margin-bottom: 22px!important; }
+
+.directory-coursebox .tcb--cols--2 {margin-top: 5px;}
+
+.directory-course-label p {margin: 3px 0px; }
+
+a .thrv-content-box p {color: #ffffff!important; text-decoration: none!important;}
+
+@media only screen and (max-width: 769px) {
+	.directory-coursebox .tcb--cols--2, .directory-coursebox .tcb--cols--2 p { text-align: center!important; }}
+
+@media only screen and (max-width: 769px) {
+	.directory-coursebox .tcb--cols--2 .directory-course-label p { margin-top: -20px;}}
+
+@media only screen and (max-width: 769px) {
+	.directory-coursebox .tcb--cols--2 .thrv-button a { margin-top: -20px;}}
+
+.directory-coursebox .tcb-button-texts {padding: 0px 20px;}
+
+@media only screen and (max-width: 767px){.thrv_wrapper.thrv-columns.directory-course-columns {margin-top: -40px;}}
+
+.path-box-button-text p {font-family: industry!important; font-weight: 700;}
+
+.course-box-course-info p {font-family: industry!important; font-weight: 700; font-size: 14px}
+
+.course-box h2 {font-size: 22px;}
+
+.course-box p {font-size: 13px;}
+
+.course-box a {text-decoration: none!important;}
+
+.scn.aut {
+    box-shadow: none;
+    background: #ffffff;
+    border-radius: 5px;
+    border: 2px solid #d4d4d4;
+    margin-bottom: 10px;
+}
+
+.scn h5 {font-family: industry, sans-serif; font-weight: 900;}
+
+.blog .awr h2.entry-title, .archive .awr h2.entry-title, .search .awr h2.entry-title  { font-size: 24px!important; font-weight: 900; line-height: 1.4em!important; margin-top: 10px; margin-bottom: 10px; font-family: ingra, serif!important; text-align: left;}
+.cnt article h2.entry-title a {color: #232a3d!important;}
+
+.cnt article h2.entry-title a:hover {color: #4d7fdf!important;}
+
+.blog .awr .category a, .archive .awr .category a, .search .awr .category a {font-family: ingra, sans-serif; text-decoration: none; font-size: 13px; text-transform: uppercase; letter-spacing: 1px; font-weight: 300; line-height: 2em; }
+
+.blog .awr p, .archive .awr p, .search .awr p {font-family: merriweather, serif!important; margin-bottom: 0px!important; line-height: 1.9em; color: #232a3d!important;}
+
+.blog footer, .archive footer, .search footer  {margin: 5px!important;}
+
+
+
+
+.cnt .rltp p, .cnt .rltp h5, .cnt .rltpi a p, .cnt .rltpi h5  {font-family: ingra, sans-serif;  font-weight: 500; font-size: 15px; color: #232a3d; }
+
+
+
+.cnt .rltp p:before, .cnt .rltpi p:before {display: none;}
+
+.cnt .rltp h5, .cnt .rltpi h5 {margin: 5px 0px;}
+
+.cnt article ul {
+    list-style: disc;
+}
+
+
+
+.cnt section footer {}
+
+
+
+footer .ftw {background-color: #232a3d; padding: 40px 0px 0px 0px;}
+
+footer .ftw ul li a, footer .ftw .textwidget  {color: #ffffff;  font-size: 12px;}
+
+footer .copy {display: none;}
+
+.tvo-set12-template.tvo-testimonials-display-single .tvo-testimonial-quote {font-family: industry!important; font-size: 168px!important; margin-left: -10px;}
+
+.tvo-testimonial-image-cover .tvo-testimonial-real-border {display: block!important;}
+
+.tvo-testimonials-display.tvo-set12-template .tvo-testimonial-display-item h4, .tvo-testimonials-display.tvo-set12-template .tvo-testimonial-display-item p {font-family: ingra!important;  font-size: 15px!important; font-weight: 100!important; font-style: normal!important; color: #0C0A48!important;}
+
+
+
+.tvo-testimonial-info svg {display: none; }
+
+.tvo-testimonial-info .tvo-testimonial-name, .tvo-testimonial-info .tvo-testimonial-role {
+font-family: ingra!important;  font-size: 15px!important;
+color: #232a3d!important;}
+
+.tvo-testimonial-info .tvo-testimonial-name {font-weight: 700!important;;}
+
+
+
+.tvo-set12-template.tvo-testimonials-display-single .tvo-testimonial-quote:before, .tvo-set12-template.tvo-testimonials-display-single .tvo-testimonial-quote:after {display: none;}
+
+@media only screen and (min-width: 768px) {
+	.why-p, .mission-two-columns {column-count: 2; column-gap: 40px; }}
+
+.why-p p, .why-p ul li {font-size: 15px; margin-bottom: 20px!important; font-weight: 300;}
+
+.gmt-edd-slack-alert-success {border: 1px solid #000000; padding: 20px; text-align: center;}
+
+.sub-picker .tve_scT .tve_scTC {background: transparent; border: 0px;}
+
+.sub-picker .tve_scT>ul li {border: 1px solid #cccccc; text-transform: capitalize; }
+
+.sub-picker .tve_scT>ul li.annual {border-radius: 5px;}
+
+.sub-picker .tve_scT>ul li.monthly {border-radius: 5px; margin-bottom: 5px!important;}
+
+.thrv_wrapper.thrv-tabbed-content div.tve_scT>ul li span {width: 70px; font-size: 12px; font-family: industry; letter-spacing: 1px; line-height: 1em; }
+
+.sub-picker ul.mon-ann {display: block; margin: auto auto!important; width: 200px; }
+
+.sub-picker ul li.annual, .sub-picker ul li.monthly {padding: 10px!important; }
+
+.thrv-pricing-table {margin-top: -40px}
+
+.thrv_wrapper.thrv-tabbed-content div.tve_scT>ul li:hover {color: #232a3d; }
+
+.main-testimonial .tvo-testimonials-display.tvo-set12-template .tvo-testimonial-display-item p {font-size: 20px!important;}
+
+.mission-ppp-horizontal {display: none;}
+
+.mission-outline p {font-size: 14px;  line-height: 1.6em; padding-top: 8px;}
+
+.mission-outline br {line-height: 3em}
+
+.mission-outline {column-count: 1; column-gap: 10px; }
+
+.ctb {border: none;}
+.ctb h5  {display: none;}
+
+#comments {border: none;}
+
+.cmc {margin: 0 auto 20px auto; }
+.cmc .awe {display: none;}
+.cmc, .cmc p {font-family: ingra!important; color: #232a3d!important; }
+
+.cmb {margin: 0px;}
+
+.lrp p {font-family: industry, sans-serif!important; font-size: 18px!important; color: #232a3d!important;}
+
+textarea:not(.editor-post-title__input) {background: #ffffff; box-shadow: none; border: 2px solid #e9e9e9; }
+
+.lrp input[type="submit"] {
+    background: #39CF90;
+    border-radius: 5px;
+	border: 0px;
+    color: #ffffff;
+    font-size: 1em;
+    font-family: industry, sans-serif;
+    margin: 20px 0;
+    padding: 12px 36px 12px 36px;
+    text-align: center;
+}
+
+.lrp input[type="text"] {
+    box-sizing: border;
+    border-radius: 5px;
+	box-shadow: none;
+    background: #ffffff;
+    border: 1px solid #e9e9e9;
+    color: #232a3d;
+    float: left;
+    font-size: 1em;
+    font-weight: 700;
+    font-family: ingra, sans-serif;
+    height: 32px;
+    margin: 0% 4.2% 3% 0%;
+    padding: 0% 0% 0% 2%;
+    width: 30.3%;
+}
+
+.lrp textarea::-webkit-input-placeholder {
+   color:transparent;
+}
+
+.lrp textarea:-moz-placeholder { /* Firefox 18- */
+   color:transparent; 
+}
+
+.lrp textarea::-moz-placeholder {  /* Firefox 19+ */
+   color:transparent; 
+}
+
+.lrp textarea:-ms-input-placeholder {  
+   color:transparent;
+}
+
+.footer-links a {color: #ffffff; line-height: 2}
+
+
+#tve_tcb2_set-021 {display: none;}
+
+a.tcb-button-link {background-color: #61D199; text-transform: uppercase; padding: 12px 30px; border-radius: 5px!important;}
+
+a.tcb-button-link:hover {background-color: rgb(97, 209, 153) !important; }
+
+
+.industry p {font-family: industry, sans-serif!important; }
+
+body.home {background-color: #232a3d;}
+
+.course-header p strong, .mission-header p strong, .mission-header .tcb-plain-text {font-size: 12px!important; letter-spacing: 3px;
+    color: rgb(77, 127, 223) !important;}
+
+.mission-header .tcb-plain-text {margin-bottom: 10px;}
+
+.directory-coursebox h3 {margin-top: 5px}
+
+.post-template-default .sidebar-blog-title h2 {font-family: industry!important; margin-top: -10px; margin-bottom: 0px;}
+
+.post-template-default .sidebar-blog-subtitle { margin-bottom: 20px;}
+
+#signup_form .error {
+    display: block;
+    line-height: .7em;
+    padding: 0;
+    color: #a94342;
+    font-family: ingra,sans-serif;
+    font-weight: 400;
+	border: 1px solid #990000;
+}
+
+
+.cnt .sAs .ttl {font-family: industry; color: #31394a; border: 0px; margin-bottom: 0px; font-size: 22px; margin-left: 5px;}
+
+section[id*='nav_menu-'] .scn ul li, .scn ul[id*='menu'] li {border-bottom: 0px; padding: 10px 0px; list-style-type: disc; margin-left: 40px; color: #31394a; font-family: ingra; letter-spacing: 1px;}
+
+.scn ul li a {font-size: 13px;}
+
+.scn>ul li:after, section[id*='nav_menu-'] .scn ul li:after, .scn ul[id*='menu'] li:after {content: none; }
+
+
+.cnt .sAs>section {margin-bottom: 20px!important;}
+
+#nav_menu-3 {margin-top: -20px;}
+
+.cnt .sAs.right {border: 0px;}
+
+.tve_flt .tve_contents_table .tve_ct_title {font-family: industry; text-align: left; display: block; margin: 0px ; padding: 0px 0px 10px; font-weight: bold; font-size: 24px;}
+
+blockquote {
+	padding: 20px;
+	color: #428bca;
+	border-left: 5px solid #428bca;
+}
+
+.sidebar-blog-title h2 {margin: 0px; padding: 10px}
+		</style>
+					<script async="" src="./Python Regex Cheat Sheet_ Regular Expressions in Python_files/hotjar-1054645.js.download"></script></head>
+<body class="post-template-default single single-post postid-2014 single-format-standard custom-background locale-en-us">
+
+<div class="flex-cnt">
+	<div id="floating_menu">
+				<header class="hbc" style="background-image:none; background-color:#232a3d">
+						<div class="wrp side_logo clearfix has_phone" id="head_wrp">
+				<div class="h-i">
+																	<div id="logo" class="left">
+								<a class="lg" href="https://www.dataquest.io/">
+									<noscript><img src="https://www.dataquest.io/wp-content/uploads/2019/01/dq-1.png"
+									     alt="Dataquest"/></noscript><img class=" lazyloaded" src="https://www.dataquest.io/wp-content/uploads/2019/01/dq-1.png" data-src="https://www.dataquest.io/wp-content/uploads/2019/01/dq-1.png" alt="Dataquest">
+								</a>
+							</div>
+																						<div class="hmn">
+							<div class="awe rmn right"></div>
+							<div class="clear"></div>
+						</div>
+						<div class="mhl" id="nav_right" style="">
+																													<!-- Cart Dropdown -->
+								<nav class="right" style=""><ul id="menu-primary" class="menu"><li id="menu-item-20226" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://www.dataquest.io/directory/">Curriculum</a></li>
+<li id="menu-item-20223" class="menu-item menu-item-type-taxonomy menu-item-object-category"><a href="https://www.dataquest.io/blog/topics/student-stories/">Outcomes</a></li>
+<li id="menu-item-20225" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://www.dataquest.io/were-hiring/">We’re Hiring</a></li>
+<li id="menu-item-22382" class="menu-item menu-item-type-custom menu-item-object-custom"><a href="https://www.dataquest.io/for-business/">For Business</a></li>
+<li id="menu-item-20220" class="menu-item menu-item-type-post_type menu-item-object-page current_page_parent"><a href="https://www.dataquest.io/blog/">Blog</a></li>
+<li id="menu-item-20221" class="menu-item menu-item-type-custom menu-item-object-custom"><a href="http://app.dataquest.io/signup">Start Learning</a></li>
+<li id="menu-item-20222" class="menu-item menu-item-type-custom menu-item-object-custom"><a href="http://app.dataquest.io/login">Log In</a></li>
+</ul></nav>														<div class="clear"></div>
+						</div>
+												<div class="clear"></div>
+														</div>
+			</div>
+		</header>
+			</div>
+	
+			
+
+
+
+			<div class="bspr"></div>
+<div class="wrp cnt">
+			<div class="bSeCont">
+				<section class="bSe left">
+
+																	
+<article>
+	<div class="awr">
+					<h1 class="entry-title">Regex Cheat Sheet: A Quick Guide to Regular Expressions in Python</h1>
+							<noscript><img src="https://www.dataquest.io/wp-content/uploads/2018/04/regex-cheat-sheet-data-science-pdf.jpg" alt="regex-cheat-sheet-data-science-pdf"
+			     title="regex-cheat-sheet-data-science-pdf"
+			     class="fwI"/></noscript><img src="./Python Regex Cheat Sheet_ Regular Expressions in Python_files/regex-cheat-sheet-data-science-pdf.jpg" data-src="https://www.dataquest.io/wp-content/uploads/2018/04/regex-cheat-sheet-data-science-pdf.jpg" alt="regex-cheat-sheet-data-science-pdf" title="regex-cheat-sheet-data-science-pdf" class="fwI ls-is-cached lazyloaded">
+		
+		<div id="tve_flt" class="tve_flt tcb-style-wrap"><div id="tve_editor" class="tve_shortcode_editor"><div class="thrv_wrapper tve_wp_shortcode"><div class="tve_shortcode_raw" style="display: none"></div><div class="tve_shortcode_rendered"><div class="kg-card-markdown">
+<p>The tough thing about learning data science is remembering all the syntax. While at Dataquest we advocate getting used to consulting the <a href="https://docs.python.org/3/">Python documentation</a>, sometimes it’s nice to have a handy PDF reference, so we’ve put together this Python regular expressions (regex) cheat sheet to help you out!</p>
+<p>This regex cheat sheet is based on Python 3’s <a href="https://docs.python.org/3/library/re.html">documentation on regular expressions</a>. </p>
+<p>If you’re interested in learning Python, we have free, interactive <a href="https://www.dataquest.io/course/python-programming-beginner">Beginner</a> and <a href="https://www.dataquest.io/course/python-for-data-science-intermediate/">Intermediate</a> Python programming courses you should check out. </p>
+<h2>Regular Expressions for Data Science (PDF)</h2>
+<p><a href="https://www.dataquest.io/wp-content/uploads/2019/03/python-regular-expressions-cheat-sheet.pdf"><noscript><img src="https://www.dataquest.io/wp-content/uploads/2018/03/python-regular-expressions-cheatsheet_pic.png" alt="python-regular-expressions-cheatsheet_pic"></noscript><img class=" lazyloaded" src="./Python Regex Cheat Sheet_ Regular Expressions in Python_files/python-regular-expressions-cheatsheet_pic.png" data-src="https://www.dataquest.io/wp-content/uploads/2018/03/python-regular-expressions-cheatsheet_pic.png" alt="python-regular-expressions-cheatsheet_pic"></a></p>
+<p></p><center><a href="https://www.dataquest.io/wp-content/uploads/2019/03/python-regular-expressions-cheat-sheet.pdf">Download the regex cheat sheet here</a></center><p></p>
+<h2 id="specialcharacters">Special Characters</h2>
+<p><code>^</code> | Matches the expression to its right at the start of a string. It matches every such instance before each <code>\n</code> in the string.</p>
+<p><code>$</code> | Matches the expression to its left at the end of a string. It matches every such instance before each <code>\n</code> in the string.</p>
+<p><code>.</code> | Matches any character except line terminators like <code>\n</code>.</p>
+<p><code>\</code> | Escapes special characters or denotes character classes.</p>
+<p><code>A|B</code> | Matches expression <code>A</code> or <code>B</code>. If <code>A</code> is matched first, <code>B</code> is left untried.</p>
+<p><code>+</code> | Greedily matches the expression to its left 1 or more times.</p>
+<p><code>*</code> | Greedily matches the expression to its left 0 or more times.</p>
+<p><code>?</code> | Greedily matches the expression to its left 0 or 1 times. But if <code>?</code> is added to qualifiers (<code>+</code>, <code>*</code>, and <code>?</code> itself) it will perform matches in a non-greedy manner.</p>
+<p><code>{m}</code> | Matches the expression to its left <code>m</code> times, and not less.</p>
+<p><code>{m,n}</code> | Matches the expression to its left <code>m</code> to <code>n</code> times, and not less.</p>
+<p><code>{m,n}?</code> | Matches the expression to its left <code>m</code> times, and ignores <code>n</code>. See <code>?</code> above.</p>
+<h2 id="characterclassesakaspecialsequences">Character Classes (a.k.a. Special Sequences)</h2>
+<p><code>\w</code> | Matches alphanumeric characters, which means <code>a-z</code>, <code>A-Z</code>, and <code>0-9</code>. It also matches the underscore, <code>_</code>.</p>
+<p><code>\d</code> | Matches digits, which means <code>0-9</code>.</p>
+<p><code>\D</code> | Matches any non-digits.</p>
+<p><code>\s</code> | Matches whitespace characters, which include the <code>\t</code>, <code>\n</code>, <code>\r</code>, and space characters.</p>
+<p><code>\S</code> | Matches non-whitespace characters.</p>
+<p><code>\b</code> | Matches the boundary (or empty string) at the start and end of a word, that is, between <code>\w</code> and <code>\W</code>.</p>
+<p><code>\B</code> | Matches where <code>\b</code> does not, that is, the boundary of <code>\w</code> characters.</p>
+<p><code>\A</code> | Matches the expression to its right at the absolute start of a string whether in single or multi-line mode.</p>
+<p><code>\Z</code> | Matches the expression to its left at the absolute end of a string whether in single or multi-line mode.</p>
+<h2 id="sets">Sets</h2>
+<p><code>[ ]</code> | Contains a set of characters to match.</p>
+<p><code>[amk]</code> | Matches either <code>a</code>, <code>m</code>, or <code>k</code>. It does not match <code>amk</code>.</p>
+<p><code>[a-z]</code> | Matches any alphabet from <code>a</code> to <code>z</code>.</p>
+<p><code>[a\-z]</code> | Matches <code>a</code>, <code>-</code>, or <code>z</code>. It matches <code>-</code> because <code>\</code> escapes it.</p>
+<p><code>[a-]</code> | Matches <code>a</code> or <code>-</code>, because <code>-</code> is not being used to indicate a series of characters.</p>
+<p><code>[-a]</code> | As above, matches <code>a</code> or <code>-</code>.</p>
+<p><code>[a-z0-9]</code> | Matches characters from <code>a</code> to <code>z</code> and also from <code>0</code> to <code>9</code>.</p>
+<p><code>[(+*)]</code> | Special characters become literal inside a set, so this matches <code>(</code>, <code>+</code>, <code>*</code>, and <code>)</code>.</p>
+<p><code>[^ab5]</code> | Adding <code>^</code> excludes any character in the set. Here, it matches characters that are not <code>a</code>, <code>b</code>, or <code>5</code>.</p>
+<h2 id="groups">Groups</h2>
+<p><code>( )</code> | Matches the expression inside the parentheses and groups it.</p>
+<p><code>(? )</code> | Inside parentheses like this, <code>?</code> acts as an extension notation. Its meaning depends on the character immediately to its right.</p>
+<p><code>(?PAB)</code> | Matches the expression <code>AB</code>, and it can be accessed with the group name.</p>
+<p><code>(?aiLmsux)</code> | Here, <code>a</code>, <code>i</code>, <code>L</code>, <code>m</code>, <code>s</code>, <code>u</code>, and <code>x</code> are flags:</p>
+<ul>
+<li><code>a</code> — Matches ASCII only</li>
+<li><code>i</code> — Ignore case</li>
+<li><code>L</code> — Locale dependent</li>
+<li><code>m</code> — Multi-line</li>
+<li><code>s</code> — Matches all</li>
+<li><code>u</code> — Matches unicode</li>
+<li><code>x</code> — Verbose</li>
+</ul>
+<p><code>(?:A)</code> | Matches the expression as represented by <code>A</code>, but unlike <code>(?PAB)</code>, it cannot be retrieved afterwards.</p>
+<p><code>(?#...)</code> | A comment. Contents are for us to read, not for matching.</p>
+<p><code>A(?=B)</code> | Lookahead assertion. This matches the expression <code>A</code> only if it is followed by <code>B</code>.</p>
+<p><code>A(?!B)</code> | Negative lookahead assertion. This matches the expression <code>A</code> only if it is not followed by <code>B</code>.</p>
+<p><code>(?&lt;=B)A</code> | Positive lookbehind assertion. This matches the expression <code>A</code> only if <code>B</code> is immediately to its left. This can only matched fixed length expressions.</p>
+<p><code>(?&lt;!B)A</code> | Negative lookbehind assertion. This matches the expression <code>A</code> only if <code>B</code> is not immediately to its left. This can only matched fixed length expressions.</p>
+<p><code>(?P=name)</code> | Matches the expression matched by an earlier group named “name”.</p>
+<p><code>(...)\1</code> | The number <code>1</code> corresponds to the first group to be matched. If we want to match more instances of the same expresion, simply use its number instead of writing out the whole expression again. We can use from <code>1</code> up to <code>99</code> such groups and their corresponding numbers.</p>
+<h2 id="popularpythonremodulefunctions">Popular Python <code>re</code> Module Functions</h2>
+<p><code>re.findall(A, B)</code> | Matches all instances of an expression <code>A</code> in a string <code>B</code> and returns them in a list.</p>
+<p><code>re.search(A, B)</code> | Matches the first instance of an expression <code>A</code> in a string <code>B</code>, and returns it as a re match object.</p>
+<p><code>re.split(A, B)</code> | Split a string B into a list using the delimiter <code>A</code>.</p>
+<p><code>re.sub(A, B, C)</code> | Replace <code>A</code> with <code>B</code> in the string <code>C</code>.</p>
+<h2 id="usefulregularexpressionssitesforpythonusers">Useful Regex Resources for Python:</h2>
+<ul>
+<li><a href="https://www.dataquest.io/blog/regular-expressions-data-scientists/">Python Regex Tutorial for Data Science</a>
+</li><li><a href="https://docs.python.org/3/library/re.html">Python 3 re module documentation</a></li>
+<li><a href="https://regex101.com/">Online regex tester and debugger</a></li>
+</ul></div>
+</div></div><div class="thrv_wrapper thrv_contentbox_shortcode thrv-content-box" style="" data-css="tve-u-16aa324773a" data-ct-name="Flat 3" data-ct="callaction-9007" data-element-name="Call to Action">
+<div class="tve-content-box-background" data-css="tve-u-16aa3247739"></div>
+<div class="tve-cb tve_empty_dropzone" data-css="tve-u-16aa3247733"><div class="thrv_wrapper thrv_heading" style="" data-css="tve-u-16aa324773b" data-tag="h2"><h2 data-css="tve-u-16aa324773c" style="text-align: center;">Free Data Science Resources</h2></div><div class="thrv_wrapper thrv_text_element tve_empty_dropzone" style="" data-css="tve-u-16aa3247738"><p data-css="tve-u-16aa3247736" style="text-align: center;">Sign up for free to get our weekly newsletter with data science, Python, R, and SQL resource links. Plus, you get access to our free, interactive online courses!</p></div><div class="thrv_wrapper thrv-button" data-css="tve-u-16aa3247735" data-tcb_hover_state_parent="">
+<a href="https://app.dataquest.io/signup?utm_source=dq_blog&amp;utm_medium=referral&amp;utm_campaign=blog_cta" class="tcb-button-link" target="_blank">
+<span class="tcb-button-texts"><span class="tcb-button-text thrv-inline-text"><strong>SIGN UP</strong></span></span>
+</a>
+</div></div>
+</div><div class="thrv_wrapper thrive_leads_shortcode"><div class="thrive-shortcode-config" style="display: none !important;"></div><div class="thrive-shortcode-html"><div class="tve-leads-shortcode tve-tl-anim tl-anim-instant tve-leads-track-shortcode_10679 tve-leads-triggered"><div class="tl-style" id="tve_tcb2_set-021" data-state="14" data-form-state=""><style type="text/css" class="tve_custom_style">@import url("//fonts.googleapis.com/css?family=Roboto:300,500,400&subset=latin");@media (min-width: 300px){:not(#tve) [data-css="tve-u-155c872270b1db7"]:hover button { background-color: rgb(7, 133, 115) !important; }:not(#tve) [data-css="tve-u-125c872270b1db4"]:hover input { color: rgb(0, 109, 94); background-color: rgb(159, 202, 196) !important; }:not(#tve) [data-css="tve-u-135c872270b1db5"] > :first-child { color: rgb(216, 216, 216); }[data-css="tve-u-75c872270b1daf"] { margin-bottom: 20px !important; }[data-css="tve-u-25c872270b1daa"] { padding-top: 0px !important; padding-bottom: 0px !important; }[data-css="tve-u-15c872270b1da9"] { margin-top: 10px !important; margin-bottom: 20px !important; }[data-css="tve-u-105c872270b1db2"] { margin-top: 0px !important; margin-bottom: 0px !important; }[data-css="tve-u-05c872270b1da6"] { overflow: hidden; background-color: rgb(101, 102, 147) !important; border-radius: 10px !important; padding: 20px !important; }:not(#tve) [data-css="tve-u-155c872270b1db7"] button { font-size: 22px; line-height: 30px; font-family: Roboto; border-radius: 5px; overflow: hidden; border: none; background-color: rgb(0, 109, 94) !important; font-weight: bold !important; }:not(#tve) [data-css="tve-u-125c872270b1db4"] input { line-height: 28px; color: rgb(51, 51, 51); font-family: Roboto; font-weight: 300; border: none; border-radius: 5px; overflow: hidden; background-image: none !important; padding: 14px 18px !important; }[data-css="tve-u-95c872270b1db1"] { line-height: 27px !important; }:not(#tve) [data-css="tve-u-95c872270b1db1"] { font-family: Roboto; font-weight: 300; font-size: 18px !important; color: rgb(255, 255, 255) !important; }[data-css="tve-u-85c872270b1db0"] strong { font-weight: 500; }[data-css="tve-u-85c872270b1db0"] { line-height: 40px !important; }:not(#tve) [data-css="tve-u-85c872270b1db0"] { font-family: Roboto; font-weight: 300; color: rgb(255, 255, 255) !important; font-size: 28px !important; }[data-css="tve-u-145c872270b1db6"] { max-width: 30%; }[data-css="tve-u-115c872270b1db3"] { max-width: 70%; }[data-css="tve-u-55c872270b1dad"] { max-width: 75%; }[data-css="tve-u-35c872270b1dab"] { max-width: 25%; }[data-css="tve-u-45c872270b1dac"] { float: none; margin-left: auto; margin-right: auto; width: 155px; margin-top: 0px !important; margin-bottom: 0px !important; }}@media (max-width: 767px){[data-css="tve-u-05c872270b1da6"] { padding: 14px !important; }[data-css="tve-u-65c872270b1dae"] { text-align: center; }[data-css="tve-u-85c872270b1db0"] { line-height: 1.2em !important; }:not(#tve) [data-css="tve-u-85c872270b1db0"] { font-size: 28px !important; }[data-css="tve-u-45c872270b1dac"] { width: 90px; margin-bottom: 10px !important; }}</style><style type="text/css" class="tve_user_custom_style">.tve-leads-conversion-object .thrv_heading h1,.tve-leads-conversion-object .thrv_heading h2,.tve-leads-conversion-object .thrv_heading h3{margin:0;padding:0}.tve-leads-conversion-object .thrv_text_element p,.tve-leads-conversion-object .thrv_text_element h1,.tve-leads-conversion-object .thrv_text_element h2,.tve-leads-conversion-object .thrv_text_element h3{margin:0}</style><style type="text/css" class="tve_global_style"></style><div class="tve-leads-conversion-object" data-tl-type="shortcode_10679"><div class="tve_flt"><div id="tve_editor" class="tve_shortcode_editor"><div class="thrv-leads-form-box tve_no_drag tve_no_icons thrv_wrapper tve_editor_main_content thrv-leads-in-content tve_empty_dropzone" style="" data-css="tve-u-05c872270b1da6"><div class="thrv_wrapper thrv-columns" style="" data-css="tve-u-15c872270b1da9"><div class="tcb-flex-row tcb-resized tcb--cols--2" data-css="tve-u-25c872270b1daa"><div class="tcb-flex-col" data-css="tve-u-35c872270b1dab" style=""><div class="tcb-col tve_empty_dropzone"><div class="thrv_wrapper tve_image_caption" data-css="tve-u-45c872270b1dac" style=""><span class="tve_image_frame" style="width: 100%;"><img class="tve_image wp-image-2421" alt="" width="155" height="155" title="set_21_icon" data-id="2421" src="./Python Regex Cheat Sheet_ Regular Expressions in Python_files/set_21_icon.png" style="width: 100%;" scale="0"></span></div></div></div><div class="tcb-flex-col" data-css="tve-u-55c872270b1dad" style=""><div class="tcb-col tve_empty_dropzone" style="" data-css="tve-u-65c872270b1dae"><div class="thrv_wrapper thrv_text_element tve_empty_dropzone" style="" data-css="tve-u-75c872270b1daf"><p data-css="tve-u-85c872270b1db0" data-default="Enter your text here..."><strong>Subscribe to the Dataquest Newsletter!</strong></p></div><div class="thrv_wrapper thrv_text_element tve_empty_dropzone" style=""><p data-css="tve-u-95c872270b1db1" data-default="Enter your text here...">Every week we pull together the most interesting Data Science articles from across the web and deliver them right to your inbox!</p></div></div></div></div></div><div class="thrv_wrapper thrv_lead_generation" data-connection="api" style="" data-css="tve-u-105c872270b1db2"><input type="hidden" class="tve-lg-err-msg" value="{&quot;email&quot;:&quot;Email address invalid&quot;,&quot;phone&quot;:&quot;Phone number invalid&quot;,&quot;password&quot;:&quot;Password invalid&quot;,&quot;passwordmismatch&quot;:&quot;Password mismatch error&quot;,&quot;required&quot;:&quot;Required field missing&quot;}"><div class="thrv_lead_generation_container tve_clearfix"><form action="https://www.dataquest.io/blog/regex-cheatsheet/#" method="post" novalidate="novalidate"><div class="tve_lead_generated_inputs_container tve_clearfix tve_empty_dropzone"><div class="thrv_wrapper thrv-columns"><div class="tcb-flex-row tcb--cols--2 tcb-resized"><div class="tcb-flex-col" data-css="tve-u-115c872270b1db3" style=""><div class="tcb-col tve_empty_dropzone"><div class="tve_lg_input_container tve_lg_input tcb-icon-display tve_empty_dropzone" data-css="tve-u-125c872270b1db4"><div class="thrv_wrapper thrv_icon" style="" data-css="tve-u-135c872270b1db5"><svg class="tcb-icon" viewBox="0 0 28 28" data-name="envelope"><title>envelope</title><path d="M28 11.094v12.406c0 1.375-1.125 2.5-2.5 2.5h-23c-1.375 0-2.5-1.125-2.5-2.5v-12.406c0.469 0.516 1 0.969 1.578 1.359 2.594 1.766 5.219 3.531 7.766 5.391 1.313 0.969 2.938 2.156 4.641 2.156h0.031c1.703 0 3.328-1.188 4.641-2.156 2.547-1.844 5.172-3.625 7.781-5.391 0.562-0.391 1.094-0.844 1.563-1.359zM28 6.5c0 1.75-1.297 3.328-2.672 4.281-2.438 1.687-4.891 3.375-7.313 5.078-1.016 0.703-2.734 2.141-4 2.141h-0.031c-1.266 0-2.984-1.437-4-2.141-2.422-1.703-4.875-3.391-7.297-5.078-1.109-0.75-2.688-2.516-2.688-3.938 0-1.531 0.828-2.844 2.5-2.844h23c1.359 0 2.5 1.125 2.5 2.5z"></path></svg></div><input type="email" data-field="email" data-required="1" data-validation="email" name="email" placeholder="Email" data-placeholder="Email" class="" style=""></div></div></div><div class="tcb-flex-col" data-css="tve-u-145c872270b1db6" style=""><div class="tcb-col tve_empty_dropzone"><div class="tve_lg_input_container tve_submit_container tve_lg_submit" data-css="tve-u-155c872270b1db7"><button type="submit" class="tve-froala" style="">Join for Free!</button></div></div></div></div></div></div><input type="hidden" name="__tcb_lg_fc" id="__tcb_lg_fc" value="YTowOnt9"><input id="_submit_option" type="hidden" name="_submit_option" value="reload"><input id="_back_url" type="hidden" name="_back_url" value=""></form></div></div></div></div></div></div></div></div></div></div></div></div><div class="tcb_flag" style="display: none"></div>
+<span id="tho-end-content" style="display: block; visibility: hidden;"></span><div class="saboxplugin-wrap" itemtype="http://schema.org/Person" itemscope="" itemprop="author"><div class="saboxplugin-gravatar"><noscript><img src="https://www.dataquest.io/wp-content/uploads/2019/01/alex_yang_profile-1-150x150.jpeg" width="100" height="100" alt="Alex Yang" class="avatar avatar-100 wp-user-avatar wp-user-avatar-100 alignnone photo" /></noscript><img src="data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20100%20100%22%3E%3C/svg%3E" data-src="https://www.dataquest.io/wp-content/uploads/2019/01/alex_yang_profile-1-150x150.jpeg" width="100" height="100" alt="Alex Yang" class="lazyload avatar avatar-100 wp-user-avatar wp-user-avatar-100 alignnone photo"></div><div class="saboxplugin-authorname"><a href="https://www.dataquest.io/blog/author/alex-yang/" class="vcard author" rel="author" itemprop="url"><span class="fn" itemprop="name">Alex Yang</span></a></div><div class="saboxplugin-desc"><div itemprop="description"><p>Alex is a writer fascinated by the things code can do. He also enjoys citizen science and new media art.</p>
+</div></div><div class="clearfix"></div></div>
+		<div class="clear"></div>
+				<div class="clear"></div>
+							<footer>
+				<ul class="meta left">
+					<li>
+																											in																<span>
+                                        <a href="https://www.dataquest.io/blog/topics/cheat-sheets/">
+	                                        Cheat Sheets                                        </a>
+																			<span>,</span>                                    </span>
+															<span>
+                                        <a href="https://www.dataquest.io/blog/topics/resources/">
+	                                        Resources                                        </a>
+									                                    </span>
+																				
+																				by <a href="https://www.dataquest.io/blog/author/alex-yang/">Alex Yang</a>
+											</li>
+																		<li class="sep">|</li>
+												<li>
+															April 2, 2018													</li>
+														</ul>
+								<div class="clear"></div>
+			</footer>
+					</div>
+
+</article>
+<div class="rltpi clearfix">
+	<div class="awr">
+		<h5>Related Posts</h5>
+					<a href="https://www.dataquest.io/blog/15-python-libraries-for-data-science/" class="rlt left">
+				<div class="lazyload rlti" data-bg="https://www.dataquest.io/wp-content/uploads/2020/02/python-libraries-for-data-science-510x162.jpg" style="background-image: url(&#39;data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20500%20300%22%3E%3C/svg%3E&#39;)"></div>
+				<p>15 Python Libraries for Data Science You Should Know</p>
+			</a>
+					<a href="https://www.dataquest.io/blog/dataquest-vs-udacity/" class="rlt left">
+				<div class="lazyload rlti" data-bg="https://www.dataquest.io/wp-content/uploads/2019/11/udacity-vs-dataquest-510x162.jpg" style="background-image: url(&#39;data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20500%20300%22%3E%3C/svg%3E&#39;)"></div>
+				<p>Dataquest vs Udacity: Which is Best for Learning Data Science?</p>
+			</a>
+					<a href="https://www.dataquest.io/blog/dataquest-vs-springboard/" class="rlt left">
+				<div class="lazyload rlti" data-bg="https://www.dataquest.io/wp-content/uploads/2019/11/compare-springboard-vs-dataquest-510x162.jpg" style="background-image: url(&#39;data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20500%20300%22%3E%3C/svg%3E&#39;)"></div>
+				<p>Dataquest vs Springboard: Which is Best for Learning Data Science?</p>
+			</a>
+					<a href="https://www.dataquest.io/blog/best-free-tools-data-science/" class="rlt left">
+				<div class="lazyload rlti" data-bg="https://www.dataquest.io/wp-content/uploads/2019/11/tools-for-data-science-510x162.jpg" style="background-image: url(&#39;data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20500%20300%22%3E%3C/svg%3E&#39;)"></div>
+				<p>The 17 Best Free Tools for Data Science</p>
+			</a>
+					</div>
+</div><div class="spr"></div>																					
+	<script type="text/javascript">
+		_thriveCurrentPost = 2014;
+	</script>
+	<article id="comments">
+		<div class="awr">
+			
+			
+			<div id="thrive_container_list_comments">
+							</div>
+
+			
+					</div>
+	</article>
+	<div id="comment-bottom"></div>
+
+																			</section>
+			</div>
+			
+	<div class="sAsCont">
+		<aside class="sAs right q2w3-fixed-widget-container" style="height: 1023px;">
+							<section id="custom_html-2_clone" style="top: 0px; width: 267px; height: 439px; visibility: hidden;" class="q2w3-widget-clone-sidebar-1"></section><section id="custom_html-2" style="top: 0px; width: 267px; position: fixed;"><div class="widget_text scn"><div class="textwidget custom-html-widget"><div class="tve-leads-shortcode tve-tl-anim tl-anim-instant tve-leads-track-shortcode_11317 tve-leads-triggered"><div class="tl-style" id="tve_tcb2_blank" data-state="44" data-form-state=""><style type="text/css" class="tve_custom_style">@media (min-width: 300px){[data-css="tve-u-05ddc35ecb2e2a"] { background-color: rgb(255, 255, 255) !important; border: none !important; margin-top: 0px !important; margin-bottom: 0px !important; padding: 0px !important; }[data-css="tve-u-25ddc35ecb2e2e"] { border-radius: 5px; overflow: hidden; background-image: linear-gradient(rgb(255, 255, 255), rgb(255, 255, 255)) !important; background-size: auto !important; background-position: 50% 50% !important; background-attachment: scroll !important; background-repeat: no-repeat !important; border: 2px solid var(--tcb-color-9)  !important; }[data-css="tve-u-35ddc35ecb2e2f"] { min-height: 350px; }[data-css="tve-u-15ddc35ecb2e2d"] { max-width: 350px; float: none; z-index: 3; position: relative; min-width: 341px; width: 341px; margin-left: auto !important; margin-right: auto !important; padding-left: 3px !important; padding-right: 3px !important; margin-top: 10px !important; }:not(#tve) [data-css="tve-u-55ddc35ecb2e31"] { color: var(--tcb-color-2)  !important; font-size: 28px !important; }[data-css="tve-u-65ddc35ecb2e32"] { margin-top: -20px !important; margin-bottom: 0px !important; }[data-css="tve-u-45ddc35ecb2e30"] { margin-top: 10px !important; }[data-css="tve-u-75ddc35ecb2e33"] { padding-left: 30px !important; padding-right: 30px !important; margin-top: -10px !important; margin-bottom: 20px !important; }:not(#tve) [data-css="tve-u-85ddc35ecb2e35"] { font-size: 12px !important; }[data-css="tve-u-85ddc35ecb2e35"] { line-height: 1.5em !important; }}@media (max-width: 767px){[data-css="tve-u-15ddc35ecb2e2d"] { float: none; margin-left: auto !important; margin-right: auto !important; }}</style><style type="text/css" class="tve_user_custom_style">.tve-leads-conversion-object .thrv_heading h1,.tve-leads-conversion-object .thrv_heading h2,.tve-leads-conversion-object .thrv_heading h3{margin:0;padding:0}.tve-leads-conversion-object .thrv_text_element p,.tve-leads-conversion-object .thrv_text_element h1,.tve-leads-conversion-object .thrv_text_element h2,.tve-leads-conversion-object .thrv_text_element h3{margin:0}</style><style type="text/css" class="tve_global_style"></style><div class="tve-leads-conversion-object" data-tl-type="shortcode_11317"><div class="tve_flt"><div id="tve_editor" class="tve_shortcode_editor"><div class="thrv-leads-form-box tve_no_drag tve_no_icons thrv_wrapper tve_editor_main_content thrv-leads-in-content tve_empty_dropzone" data-css="tve-u-05ddc35ecb2e2a"><div class="thrv_wrapper thrv_contentbox_shortcode thrv-content-box" data-css="tve-u-15ddc35ecb2e2d"><div class="tve-content-box-background" data-css="tve-u-25ddc35ecb2e2e"></div><div class="tve-cb" data-css="tve-u-35ddc35ecb2e2f"><div class="thrv_wrapper thrv_text_element sidebar-blog-title" data-css="tve-u-45ddc35ecb2e30" data-tag="h2"><h2 class="" data-css="tve-u-55ddc35ecb2e31" style="text-align: center;">START LEARNING</h2></div><div class="thrv_wrapper thrv_custom_html_shortcode sidebar-blog-form" data-css="tve-u-65ddc35ecb2e32"><iframe src="./Python Regex Cheat Sheet_ Regular Expressions in Python_files/signup.html" style="padding: 0px; margin: 0px; width: 100%; min-height: 335px;" data-hj-allow-iframe="">	</iframe><div class="tve_iframe_cover"></div><div class="tve_iframe_cover"></div><div class="tve_iframe_cover"></div><div class="tve_iframe_cover"></div><div class="tve_iframe_cover"></div><div class="tve_iframe_cover"></div><div class="tve_iframe_cover"></div><div class="tve_iframe_cover"></div><div class="tve_iframe_cover"></div><div class="tve_iframe_cover"></div><div class="tve_iframe_cover"></div><div class="tve_iframe_cover"></div><div class="tve_iframe_cover"></div><div class="tve_iframe_cover"></div><div class="tve_iframe_cover"></div><div class="tve_iframe_cover"></div><div class="tve_iframe_cover"></div><div class="tve_iframe_cover"></div><div class="tve_iframe_cover"></div><div class="tve_iframe_cover"></div><div class="tve_iframe_cover"></div><div class="tve_iframe_cover"></div><div class="tve_iframe_cover"></div><div class="tve_iframe_cover"></div><div class="tve_iframe_cover"></div><div class="tve_iframe_cover"></div><div class="tve_iframe_cover"></div><div class="tve_iframe_cover"></div><div class="tve_iframe_cover"></div><div class="tve_iframe_cover"></div><div class="tve_iframe_cover"></div><div class="tve_iframe_cover"></div><div class="tve_iframe_cover"></div><div class="tve_iframe_cover"></div><div class="tve_iframe_cover"></div><div class="tve_iframe_cover"></div><div class="tve_iframe_cover"></div><div class="tve_iframe_cover"></div><div class="tve_iframe_cover"></div><div class="tve_iframe_cover"></div><div class="tve_iframe_cover"></div><div class="tve_iframe_cover"></div><div class="tve_iframe_cover"></div><div class="tve_iframe_cover"></div></div><div class="thrv_wrapper thrv_text_element tve-froala fr-box fr-basic" data-css="tve-u-75ddc35ecb2e33"><p data-css="tve-u-85ddc35ecb2e35" style="text-align: center;">By creating an account you agree to accept our <a href="https://www.dataquest.io/terms/" class="tve-froala" style="outline: none; display: inline-block;">terms of use</a>&nbsp;and&nbsp;<a href="https://www.dataquest.io/privacy/" class="tve-froala" style="outline: none; display: inline-block;">privacy policy</a>.</p></div></div></div></div></div></div></div></div></div></div></div></section><section id="search-3_clone" style="top: 459px; width: 267px; height: 99px; visibility: hidden;" class="q2w3-widget-clone-sidebar-1"></section><section id="search-3" style="top: 459px; width: 267px; position: fixed;"><div class="scn"><form action="https://www.dataquest.io/" method="get" class="srh">
+	<div>
+		<input type="text" placeholder="Search" class="search-field" name="s">
+		<button type="submit" class="search-button sBn"></button>
+		<div class="clear"></div>
+	</div>
+</form>
+</div></section><section id="nav_menu-3_clone" style="top: 578px; width: 267px; height: 249px; visibility: hidden;" class="q2w3-widget-clone-sidebar-1"></section><section id="nav_menu-3" style="top: 578px; width: 267px; position: fixed;"><div class="scn"><p class="ttl">Browse the blog:</p><div class="menu-left-container"><ul id="menu-left" class="menu"><li id="menu-item-14042" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-14042"><a href="https://www.dataquest.io/blog/data-science-career-guide/">Job Application Guide</a></li>
+<li id="menu-item-5973" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-5973"><a href="https://www.dataquest.io/blog/topics/data-science-tutorials/">Tutorials</a></li>
+<li id="menu-item-5978" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-5978"><a href="https://www.dataquest.io/blog/topics/student-stories/">Student Stories</a></li>
+<li id="menu-item-5974" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-5974"><a href="https://www.dataquest.io/blog/topics/learning-and-motivation/">Learning and Motivation</a></li>
+<li id="menu-item-5979" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-5979"><a href="https://www.dataquest.io/blog/topics/building-a-data-science-portfolio/">How to Build a Portfolio</a></li>
+<li id="menu-item-5977" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-5977"><a href="https://www.dataquest.io/blog/topics/data-science-projects/">Data Science Projects</a></li>
+</ul></div></div></section><section id="nav_menu-10_clone" style="top: 827px; width: 267px; height: 159px; visibility: hidden;" class="q2w3-widget-clone-sidebar-1"></section><section id="nav_menu-10" style="top: 827px; width: 267px; position: fixed;"><div class="scn"><p class="ttl">More resources:</p><div class="menu-more-resources-container"><ul id="menu-more-resources" class="menu"><li id="menu-item-19385" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-19385"><a href="https://www.dataquest.io/data-science-courses/">Data Science Courses</a></li>
+<li id="menu-item-19386" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-19386"><a href="https://www.dataquest.io/python-tutorials-for-data-science/">Python Tutorials</a></li>
+<li id="menu-item-19388" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-19388"><a href="https://www.dataquest.io/blog/data-analyst-data-scientist-data-engineer/">Data Analyst vs. Scientist vs. Engineer</a></li>
+</ul></div></div></section>			
+		</aside>
+	</div>
+
+		<div class="clear"></div>
+</div>
+<div class="clear"></div>
+</div>
+
+
+
+<footer>
+			<div class="ftw" id="dq_footer">
+			<div class="wrp cnt">
+									<div class="colm twc ">
+						<section id="text-5">			<div class="textwidget"><div style="margin: 20px 0px 20px 0px;">
+<p><a href="https://www.dataquest.io/"><noscript><img src="https://www.dataquest.io/wp-content/uploads/2019/01/dq-1.png" width="170px" height="28px" /></noscript><img class="lazyload" src="data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20170%2028%22%3E%3C/svg%3E" data-src="https://www.dataquest.io/wp-content/uploads/2019/01/dq-1.png" width="170px" height="28px"></a></p>
+</div>
+<div style="margin: 20px 0px 20px 0px;">All rights reserved © 2019 – Dataquest Labs, Inc.</div>
+<div style="margin: 20px 50px 20px 0px;">We are committed to protecting your personal information and your right to privacy. Privacy Policy last updated June 13th, 2019 – <a style="color: #ffffff; font-size: 12px;" href="https://www.dataquest.io/privacy">review here</a>.</div>
+</div>
+		</section>					</div>
+									<div class="colm twc lst">
+						<section id="text-9">			<div class="textwidget"><div class="footer-links" style="font-size: 12px; margin: 20px 0px 0px 0px;">
+<div style="float: left; margin-right: 50px;"><a href="https://www.dataquest.io/help" target="_blank" rel="noopener noreferrer">Help</a><br>
+<a href="https://www.dataquest.io/blog" target="_blank" rel="noopener noreferrer">Blog</a><br>
+<a href="https://www.dataquest.io/directory">Directory</a><br>
+<a href="https://community.dataquest.io/" target="_blank" rel="noopener noreferrer">Community</a></div>
+<div style="float: left; margin-right: 50px;"><a href="https://www.dataquest.io/subscribe">Pricing</a><br>
+<a href="https://www.dataquest.io/were-hiring">We’re Hiring</a><br>
+<a href="https://www.dataquest.io/terms">Legals</a><br>
+<a href="https://www.dataquest.io/privacy">Privacy</a></div>
+<div style="float: left; margin-bottom: 100px;"><a href="https://www.facebook.com/dataquestio" target="_blank" rel="noopener noreferrer">Facebook</a><br>
+<a href="https://twitter.com/dataquestio" target="_blank" rel="noopener noreferrer">Twitter</a><br>
+<a href="https://www.linkedin.com/company/dataquest-io" target="_blank" rel="noopener noreferrer">LinkedIn</a></div>
+</div>
+</div>
+		</section>					</div>
+								<div class="clear"></div>
+			</div>
+		</div>
+			<div class="copy">
+		<div class="wrp cnt">
+			<p>
+											</p>
+					</div>
+	</div>
+	</footer>
+
+
+<script type="text/javascript">
+/* <![CDATA[ */
+var TVE_Ult_Data = {"ajaxurl":"https:\/\/www.dataquest.io\/wp-admin\/admin-ajax.php","ajax_load_action":"tve_ult_ajax_load","conversion_events_action":"tve_ult_conversion_event","shortcode_campaign_ids":[],"matched_display_settings":[],"campaign_ids":[],"post_id":2014,"is_singular":true,"tu_em":""};
+/* ]]> */
+</script>
+		<script type="text/javascript" src="./Python Regex Cheat Sheet_ Regular Expressions in Python_files/no-campaign.min.js.download"></script><style>.lazyload,.lazyloading{opacity:0;}.lazyloaded{opacity:1;transition:opacity 300ms;}</style><noscript><style>.lazyload{display:none;}</style></noscript><script data-noptimize="1">window.lazySizesConfig=window.lazySizesConfig||{};window.lazySizesConfig.loadMode=1;</script><script async="" data-noptimize="1" src="./Python Regex Cheat Sheet_ Regular Expressions in Python_files/lazysizes.min.js.download"></script><style type="text/css">.saboxplugin-wrap{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;-ms-box-sizing:border-box;box-sizing:border-box;border:1px solid #eee;width:100%;clear:both;display:block;overflow:hidden;word-wrap:break-word;position:relative}.saboxplugin-wrap .saboxplugin-gravatar{float:left;padding:20px}.saboxplugin-wrap .saboxplugin-gravatar img{max-width:100px;height:auto;border-radius:0;}.saboxplugin-wrap .saboxplugin-authorname{font-size:18px;line-height:1;margin:20px 0 0 20px;display:block}.saboxplugin-wrap .saboxplugin-authorname a{text-decoration:none}.saboxplugin-wrap .saboxplugin-authorname a:focus{outline:0}.saboxplugin-wrap .saboxplugin-desc{display:block;margin:5px 20px}.saboxplugin-wrap .saboxplugin-desc a{text-decoration:underline}.saboxplugin-wrap .saboxplugin-desc p{margin:5px 0 12px}.saboxplugin-wrap .saboxplugin-web{margin:0 20px 15px;text-align:left}.saboxplugin-wrap .sab-web-position{text-align:right}.saboxplugin-wrap .saboxplugin-web a{color:#ccc;text-decoration:none}.saboxplugin-wrap .saboxplugin-socials{position:relative;display:block;background:#fcfcfc;padding:5px;border-top:1px solid #eee}.saboxplugin-wrap .saboxplugin-socials a svg{width:20px;height:20px}.saboxplugin-wrap .saboxplugin-socials a svg .st2{fill:#fff; transform-origin:center center;}.saboxplugin-wrap .saboxplugin-socials a svg .st1{fill:rgba(0,0,0,.3)}.saboxplugin-wrap .saboxplugin-socials a:hover{opacity:.8;-webkit-transition:opacity .4s;-moz-transition:opacity .4s;-o-transition:opacity .4s;transition:opacity .4s;box-shadow:none!important;-webkit-box-shadow:none!important}.saboxplugin-wrap .saboxplugin-socials .saboxplugin-icon-color{box-shadow:none;padding:0;border:0;-webkit-transition:opacity .4s;-moz-transition:opacity .4s;-o-transition:opacity .4s;transition:opacity .4s;display:inline-block;color:#fff;font-size:0;text-decoration:inherit;margin:5px;-webkit-border-radius:0;-moz-border-radius:0;-ms-border-radius:0;-o-border-radius:0;border-radius:0;overflow:hidden}.saboxplugin-wrap .saboxplugin-socials .saboxplugin-icon-grey{text-decoration:inherit;box-shadow:none;position:relative;display:-moz-inline-stack;display:inline-block;vertical-align:middle;zoom:1;margin:10px 5px;color:#444;fill:#444}.clearfix:after,.clearfix:before{content:' ';display:table;line-height:0;clear:both}.ie7 .clearfix{zoom:1}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-twitch{border-color:#38245c}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-addthis{border-color:#e91c00}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-behance{border-color:#003eb0}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-delicious{border-color:#06c}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-deviantart{border-color:#036824}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-digg{border-color:#00327c}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-dribbble{border-color:#ba1655}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-facebook{border-color:#1e2e4f}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-flickr{border-color:#003576}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-github{border-color:#264874}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-google{border-color:#0b51c5}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-googleplus{border-color:#96271a}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-html5{border-color:#902e13}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-instagram{border-color:#1630aa}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-linkedin{border-color:#00344f}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-pinterest{border-color:#5b040e}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-reddit{border-color:#992900}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-rss{border-color:#a43b0a}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-sharethis{border-color:#5d8420}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-skype{border-color:#00658a}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-soundcloud{border-color:#995200}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-spotify{border-color:#0f612c}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-stackoverflow{border-color:#a95009}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-steam{border-color:#006388}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-user_email{border-color:#b84e05}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-stumbleUpon{border-color:#9b280e}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-tumblr{border-color:#10151b}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-twitter{border-color:#0967a0}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-vimeo{border-color:#0d7091}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-windows{border-color:#003f71}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-whatsapp{border-color:#003f71}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-wordpress{border-color:#0f3647}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-yahoo{border-color:#14002d}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-youtube{border-color:#900}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-xing{border-color:#000202}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-mixcloud{border-color:#2475a0}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-vk{border-color:#243549}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-medium{border-color:#00452c}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-quora{border-color:#420e00}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-meetup{border-color:#9b181c}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-goodreads{border-color:#000}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-snapchat{border-color:#999700}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-500px{border-color:#00557f}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-mastodont{border-color:#185886}.sabox-plus-item{margin-bottom:20px}@media screen and (max-width:480px){.saboxplugin-wrap{text-align:center}.saboxplugin-wrap .saboxplugin-gravatar{float:none;padding:20px 0;text-align:center;margin:0 auto;display:block}.saboxplugin-wrap .saboxplugin-gravatar img{float:none;display:inline-block;display:-moz-inline-stack;vertical-align:middle;zoom:1}.saboxplugin-wrap .saboxplugin-desc{margin:0 10px 20px;text-align:center}.saboxplugin-wrap .saboxplugin-authorname{text-align:center;margin:10px 0 20px}}body .saboxplugin-authorname a,body .saboxplugin-authorname a:hover{box-shadow:none;-webkit-box-shadow:none}a.sab-profile-edit{font-size:16px!important;line-height:1!important}.sab-edit-settings a,a.sab-profile-edit{color:#0073aa!important;box-shadow:none!important;-webkit-box-shadow:none!important}.sab-edit-settings{margin-right:15px;position:absolute;right:0;z-index:2;bottom:10px;line-height:20px}.sab-edit-settings i{margin-left:5px}.saboxplugin-socials{line-height:1!important}.rtl .saboxplugin-wrap .saboxplugin-gravatar{float:right}.rtl .saboxplugin-wrap .saboxplugin-authorname{display:flex;align-items:center}.rtl .saboxplugin-wrap .saboxplugin-authorname .sab-profile-edit{margin-right:10px}.rtl .sab-edit-settings{right:auto;left:0}img.sab-custom-avatar{max-width:75px;}.saboxplugin-wrap .saboxplugin-gravatar img {-webkit-border-radius:50%;-moz-border-radius:50%;-ms-border-radius:50%;-o-border-radius:50%;border-radius:50%;}.saboxplugin-wrap {margin-top:20px; margin-bottom:0px; padding: 0px 0px }.saboxplugin-wrap .saboxplugin-authorname {font-size:16px; line-height:23px;}.saboxplugin-wrap .saboxplugin-desc p, .saboxplugin-wrap .saboxplugin-desc {font-size:13px !important; line-height:20px !important;}.saboxplugin-wrap .saboxplugin-web {font-size:14px;}.saboxplugin-wrap .saboxplugin-socials a svg {width:18px;height:18px;}</style><link rel="stylesheet" id="tve_leads_forms-css" href="./Python Regex Cheat Sheet_ Regular Expressions in Python_files/frontend.css" type="text/css" media="all">
+<script type="text/javascript" src="./Python Regex Cheat Sheet_ Regular Expressions in Python_files/triggers.min.js.download"></script>
+<script type="text/javascript" src="./Python Regex Cheat Sheet_ Regular Expressions in Python_files/imagesloaded.min.js.download"></script>
+<script type="text/javascript" src="./Python Regex Cheat Sheet_ Regular Expressions in Python_files/masonry.min.js.download"></script>
+<script type="text/javascript" src="./Python Regex Cheat Sheet_ Regular Expressions in Python_files/jquery.masonry.min.js.download"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var tve_frontend_options = {"ajaxurl":"https:\/\/www.dataquest.io\/wp-admin\/admin-ajax.php","is_editor_page":"","page_events":[],"is_single":"1","social_fb_app_id":"","dash_url":"https:\/\/www.dataquest.io\/wp-content\/plugins\/thrive-visual-editor\/thrive-dashboard","translations":{"Copy":"Copy"},"routes":{"posts":"https:\/\/www.dataquest.io\/wp-json\/tcb\/v1\/posts"},"ip":"172.68.54.164","current_user":[],"post_id":"2014","post_title":"Regex Cheat Sheet: A Quick Guide to Regular Expressions in Python","post_type":"post","post_url":"https:\/\/www.dataquest.io\/blog\/regex-cheatsheet\/","is_lp":"","post_request_data":[]};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./Python Regex Cheat Sheet_ Regular Expressions in Python_files/frontend.min.js.download"></script>
+<script type="text/javascript" src="./Python Regex Cheat Sheet_ Regular Expressions in Python_files/datatables.min.js.download"></script>
+<script type="text/javascript" src="./Python Regex Cheat Sheet_ Regular Expressions in Python_files/posts-data-table.min.js.download"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var ThriveApp = {"ajax_url":"https:\/\/www.dataquest.io\/wp-admin\/admin-ajax.php","lazy_load_comments":"1","comments_loaded":"0","translations":{"ProductDetails":"Product Details"}};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./Python Regex Cheat Sheet_ Regular Expressions in Python_files/script.min.js.download"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var tve_dash_front = {"ajaxurl":"https:\/\/www.dataquest.io\/wp-admin\/admin-ajax.php","force_ajax_send":"1","is_crawler":""};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./Python Regex Cheat Sheet_ Regular Expressions in Python_files/frontend.min.js(1).download"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var ThriveApprentice = {"ajax_url":"https:\/\/www.dataquest.io\/wp-admin\/admin-ajax.php","current_post_id":"2014","lang":{"remove_from_fav":"Remove from Favorites","add_to_fav":"Mark as Favorite"},"progress_status":{"new":"new","started":"started","completed":"completed"}};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./Python Regex Cheat Sheet_ Regular Expressions in Python_files/thrive-apprentice.js.download"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var q2w3_sidebar_options = [{"sidebar":"sidebar-1","margin_top":0,"margin_bottom":0,"stop_id":"dq_footer","screen_max_width":500,"screen_max_height":0,"width_inherit":false,"refresh_interval":1500,"window_load_hook":false,"disable_mo_api":false,"widgets":["custom_html-2","search-3","nav_menu-3","nav_menu-10"]}];
+/* ]]> */
+</script>
+<script type="text/javascript" src="./Python Regex Cheat Sheet_ Regular Expressions in Python_files/q2w3-fixed-widget.min.js.download"></script>
+<script type="text/javascript" src="./Python Regex Cheat Sheet_ Regular Expressions in Python_files/prism-js.min.js.download"></script>
+<script type="text/javascript" src="./Python Regex Cheat Sheet_ Regular Expressions in Python_files/wp-embed.min.js.download"></script>
+<script type="text/javascript" src="./Python Regex Cheat Sheet_ Regular Expressions in Python_files/frontend.min.js(2).download"></script>
+<script type="text/javascript">/*<![CDATA[*/var THO_Front = THO_Front || {}; THO_Front.data = {"end_of_content_id":"tho-end-content","is_single":true,"log_url":"https:\/\/www.dataquest.io\/wp-json\/tho\/v1\/logs","active_triggers":{"viewport":"thrive_headline"},"log_engagements":[],"post_id":2014,"test_id":0,"const":{"_e_click":1,"_e_scroll":2,"_e_time":3,"_impression":1,"_engagement":2}}/*]]> */</script><script type="text/javascript">var tcb_post_lists=JSON.parse('[]');</script><script type="text/javascript">/*<![CDATA[*/if ( !window.TL_Const ) {var TL_Const={"security":"f0c2d9d35a","ajax_url":"https:\/\/www.dataquest.io\/wp-admin\/admin-ajax.php","forms":[],"action_conversion":"tve_leads_ajax_conversion","action_impression":"tve_leads_ajax_impression","ajax_load":1,"main_group_id":17187,"display_options":{"allowed_post_types":[],"flag_url_match":false},"shortcode_ids":["10679","11317"],"custom_post_data":{"http_referrer":"https:\/\/www.google.com\/"},"current_screen":{"screen_type":4,"screen_id":2014},"ignored_fields":["email","_captcha_size","_captcha_theme","_captcha_type","_submit_option","_use_captcha","g-recaptcha-response","__tcb_lg_fc","__tcb_lg_msg","_state","_form_type","_error_message_option","_back_url","_submit_option","url","_asset_group","_asset_option","mailchimp_optin"]};} else {ThriveGlobal.$j.extend(true, TL_Const, {"security":"f0c2d9d35a","ajax_url":"https:\/\/www.dataquest.io\/wp-admin\/admin-ajax.php","forms":[],"action_conversion":"tve_leads_ajax_conversion","action_impression":"tve_leads_ajax_impression","ajax_load":1,"main_group_id":17187,"display_options":{"allowed_post_types":[],"flag_url_match":false},"shortcode_ids":["10679","11317"],"custom_post_data":{"http_referrer":"https:\/\/www.google.com\/"},"current_screen":{"screen_type":4,"screen_id":2014},"ignored_fields":["email","_captcha_size","_captcha_theme","_captcha_type","_submit_option","_use_captcha","g-recaptcha-response","__tcb_lg_fc","__tcb_lg_msg","_state","_form_type","_error_message_option","_back_url","_submit_option","url","_asset_group","_asset_option","mailchimp_optin"]})} /*]]> */</script>
+<script type="text/javascript" id="">(function(a,e,f,g,b,c,d){a.ProfitWellObject=b;a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)};a[b].l=1*new Date;c=e.createElement(f);d=e.getElementsByTagName(f)[0];c.async=1;c.src=g;d.parentNode.insertBefore(c,d)})(window,document,"script","https://dna8twue3dlxq.cloudfront.net/js/profitwell.js","profitwell");profitwell("auth_token","bd8a22377119e7044e07346a8c89a91f");profitwell("user_email","USER@EMAIL.COM");</script>
+<script type="text/javascript" id="">(function(a,c,e,f,d,b){a.hj=a.hj||function(){(a.hj.q=a.hj.q||[]).push(arguments)};a._hjSettings={hjid:1054645,hjsv:6};d=c.getElementsByTagName("head")[0];b=c.createElement("script");b.async=1;b.src=e+a._hjSettings.hjid+f+a._hjSettings.hjsv;d.appendChild(b)})(window,document,"https://static.hotjar.com/c/hotjar-",".js?sv\x3d");</script>
+
+<script type="text/javascript" id="">!function(c,d){if(!c.rdt){var a=c.rdt=function(){a.sendEvent?a.sendEvent.apply(a,arguments):a.callQueue.push(arguments)};a.callQueue=[];var b=d.createElement("script");b.src="https://www.redditstatic.com/ads/pixel.js";b.async=!0;var e=d.getElementsByTagName("script")[0];e.parentNode.insertBefore(b,e)}}(window,document);rdt("init","t2_umdn63h");rdt("track","PageVisit");</script>
+
+
+
+
+<script type="text/javascript" id="">!function(d,e,f,a,b,c){d.qp||(a=d.qp=function(){a.qp?a.qp.apply(a,arguments):a.queue.push(arguments)},a.queue=[],b=document.createElement(e),b.async=!0,b.src=f,c=document.getElementsByTagName(e)[0],c.parentNode.insertBefore(b,c))}(window,"script","https://a.quora.com/qevents.js");qp("init","54f6bd738f084d4bab5c10277788555d");qp("track","ViewContent");</script>
+<noscript><img height="1" width="1" style="display:none" src="https://q.quora.com/_/ad/54f6bd738f084d4bab5c10277788555d/pixel?tag=ViewContent&amp;noscript=1"></noscript>
+<iframe id="intercom-frame" style="position: absolute !important; opacity: 0 !important; width: 1px !important; height: 1px !important; top: 0 !important; left: 0 !important; border: none !important; display: block !important; z-index: -1 !important;" aria-hidden="true" tabindex="-1" title="Intercom" src="./Python Regex Cheat Sheet_ Regular Expressions in Python_files/saved_resource.html"></iframe><iframe frameborder="0" scrolling="no" style="background-color: transparent; border: 0px; display: none;" src="./Python Regex Cheat Sheet_ Regular Expressions in Python_files/saved_resource(1).html"></iframe><div id="GOOGLE_INPUT_CHEXT_FLAG" input="" input_stat="{&quot;tlang&quot;:true,&quot;tsbc&quot;:true,&quot;pun&quot;:true,&quot;mk&quot;:true,&quot;ss&quot;:true}" style="display: none;"></div><div id="intercom-css-container"><style data-emotion="intercom-global"></style></div><div id="intercom-container" class="intercom-namespace"><style>html.intercom-mobile-messenger-active,html.intercom-mobile-messenger-active > body,html.intercom-modal-open,#intercom-container-body{overflow:hidden !important;}html.intercom-mobile-messenger-active,html.intercom-mobile-messenger-active > body{position:static !important;}html.intercom-mobile-messenger-active > body{height:0 !important;margin:0 !important;}iframe#intercom-frame{position:absolute !important;opacity:0 !important;width:1px !important;height:1px !important;top:0 !important;left:0 !important;border:none !important;display:block !important;z-index:-1 !important;}</style><div class="intercom-app" aria-live="polite"><div id="intercom-modal-container"></div></div></div><script type="text/javascript">
+	(function ($) {
+	$(function () {
+		var event_data = {"form_id":"tve-leads-track-shortcode_10679","form_type":"shortcode"};
+		event_data.source = 'page_load';
+		setTimeout(function () {
+			ThriveGlobal.$j(TL_Front).trigger('showform.thriveleads', event_data);
+			}, 200);
+		});
+	})
+(ThriveGlobal.$j);
+</script><script type="text/javascript">
+	(function ($) {
+	$(function () {
+		var event_data = {"form_id":"tve-leads-track-shortcode_11317","form_type":"shortcode"};
+		event_data.source = 'page_load';
+		setTimeout(function () {
+			ThriveGlobal.$j(TL_Front).trigger('showform.thriveleads', event_data);
+			}, 200);
+		});
+	})
+(ThriveGlobal.$j);
+</script><script type="text/javascript">var tcb_post_lists=JSON.parse('[]');</script></body></html>
